@@ -1,0 +1,5 @@
+Comenzar las features con DR-Hx-Ty
+Donde "x" es el número de la historia de usuario a la que corresponde la Tarea "y"
+Por supuesto, "y" es el número de la tarea
+
+Cada feature debería solucionar una tarea
