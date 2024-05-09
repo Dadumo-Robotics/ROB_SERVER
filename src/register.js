@@ -1,29 +1,37 @@
 import React from 'react';
-import logo from './logoDadumo.png'; // Importa la imagen de React
+import logo from './logoDadumo.png';
 import './login.css';
 
-function Register() {
+function Login() {
   return (
-    <div className="App">
+    <div className="app">
       <main className='main'>
-        <div className='Columnas-login'>
-            <img src={logo} className="Logo-login" alt="logo" />
-            <div className='Inputs-texto'>
-                <h2>Inicia sesión</h2>
-                <div>
-                    <p>Nombre y apellidos</p>
-                    <input type='text' placeholder='Nombre' />
-                </div>
-                <div>
-                    <p>Correo electrónico</p>
-                    <input type='email' placeholder='Correo electrónico' />
-                </div>
-                <div>
-                    <p>Contraseña</p>
-                    <input type='password' placeholder='Contraseña' />
-                </div>
-                <h5>¿No tienes cuenta? Registrate</h5>
-                <button className='btn-login'>Iniciar sesión</button>
+        <div className='login-container'>
+          <img src={logo} className="logo" alt="logo" />
+          <div className='inputs-container'>
+            <h2>Inicia sesión</h2>
+            <div>
+              <label>Nombre y apellidos</label>
+              <input type='text' placeholder='Nombre y apellidos' />
+            </div>
+            <div>
+              <label>Correo electrónico</label>
+              <input type='email' placeholder='Correo electrónico' />
+            </div>
+            <div>
+              <label>Contraseña</label>
+              <input type='password' placeholder='Contraseña' />
+            </div>
+            <div>
+              <label>Reescriba la contraseña</label>
+              <input type='password' placeholder='Contraseña' />
+            </div>            
+            <div>
+              <label>Id del producto</label>
+              <input type='number' placeholder='ej. 123456' />
+            </div>
+            <button className='btn-Register'>¿Ya tienes cuenta? Inicia sesión</button>
+            <button className='btn-login'>Iniciar sesión</button>
           </div>
         </div>
       </main>
@@ -31,4 +39,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Login;
