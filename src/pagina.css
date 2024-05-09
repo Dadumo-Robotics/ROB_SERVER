@@ -1,0 +1,51 @@
+.pagina {
+  text-align: center;
+}
+
+.pagina-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pagina-logo {
+    animation: pagina-logo-spin infinite 20s linear;
+  }
+}
+
+.main{
+  margin-top: 15vh;
+}
+
+.pagina-link {
+  color: #61dafb;
+}
+
+@keyframes pagina-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pagina {
+  text-align: center;
+}
+
+.header-buttons {
+  display: flex;
+}
+
+.header-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #61dafb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Ajusta los estilos según necesites */
