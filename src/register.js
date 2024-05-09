@@ -1,15 +1,15 @@
 import React from 'react';
 import logo from './logoDadumo.png';
-import './login.css';
+import './register.css';
 
 function Login() {
   return (
     <div className="app">
       <main className='main'>
-        <div className='login-container'>
+        <div className='register-container'>
           <img src={logo} className="logo" alt="logo" />
           <div className='inputs-container'>
-            <h2>Inicia sesión</h2>
+            <h2>Registro de usuario</h2>
             <div>
               <label>Nombre y apellidos</label>
               <input type='text' placeholder='Nombre y apellidos' />
@@ -30,8 +30,8 @@ function Login() {
               <label>Id del producto</label>
               <input type='number' placeholder='ej. 123456' />
             </div>
-            <button className='btn-Register'>¿Ya tienes cuenta? Inicia sesión</button>
-            <button className='btn-login'>Iniciar sesión</button>
+            <button className='btn-toLogin'>¿Ya tienes cuenta? Inicia sesión</button>
+            <button className='btn-register'>Iniciar sesión</button>
           </div>
         </div>
       </main>

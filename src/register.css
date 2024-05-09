@@ -1,0 +1,76 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .register-container {
+    display: flex;
+    width: 90%;
+    margin-top: -12%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .logo { 
+    width: 60vh; /* Establece el ancho del logo */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    margin: 10vh 25vh 0vh 12vh;
+    /* border: 1px solid #a4a4a4; */
+    object-fit: contain;
+  }
+  
+  .inputs-container {
+    width: 40%;
+    height: 71vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #a4a4a4;
+    border-radius: 16px;
+  }
+  
+  .inputs-container label {
+    margin: 5px 9.3%;
+    text-align: left;
+    width: 80%;
+  }
+  
+  input {
+    width: 80%;
+    align-self: center;
+    height: 3.5vh;
+    margin-bottom: 1.5vh;
+  }
+  
+  .btn-register {
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #0099cc;
+    color: #ffffff;
+    padding: 1.5vh 5vh;
+    border: none;
+    width: 30%;
+    align-self: center;
+  }
+  
+.btn-toLogin {
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #0099CC;
+    border: 0px solid transparent ;
+    padding: 1.4vh 0px 2.8vh 0px;
+    }
+  

@@ -18,7 +18,7 @@ function Login() {
               <label>Contraseña</label>
               <input type='password' placeholder='Contraseña' />
             </div>
-            <h5>¿No tienes cuenta? Regístrate</h5>
+            <button className='btn-Register'>¿No tienes cuenta? Regístrate</button>
             <button className='btn-login'>Iniciar sesión</button>
           </div>
         </div>

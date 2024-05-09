@@ -25,7 +25,7 @@
 
 .inputs-container {
   width: 40%;
-  height: 330px;
+  height: 310px;
   display: flex;
   flex-direction: column;
   border: 1px solid #a4a4a4;
@@ -58,6 +58,11 @@ input {
   align-self: center;
 }
 
-h5 {
-  color: #0099cc;
+.btn-Register {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #0099CC;
+  border: 0px solid transparent ;
+  padding: 10px 0px 20px 0px;
 }
