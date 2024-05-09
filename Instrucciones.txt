@@ -4,11 +4,11 @@ Abrimos la terminal en el directorio donde queremos inicializar el servidor (Uti
 
 Creamos un entorno virtual de Python utilizando este comando
 
-python -m venv (nombre del espacio virtual)
+python -m venv server_env
 
 Luego activaremos el servidor para poder instalar los requerimientos necesarios para el proyecto
 
-(nombre del espacio virtual)\Scripts\activate.bat
+server_env\Scripts\activate.bat
 
 A PARTIR DE ESTE PUNTO YA ESTAMOS DENTRO DEL ESPACIO VIRTUAL
 
