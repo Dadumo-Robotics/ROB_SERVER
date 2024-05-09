@@ -15,14 +15,14 @@ function videoSecreto() {
     if (chance < 0.01) { // 1% de probabilidad de mostrar el video secreto
         console.log("Video Secreto!");
         return (
-            <video width="100%" height="100%" autoPlay loop muted controls>
+            <video width="100%" height="100%" autoPlay loop muted>
                 <source src={videoSrcSecreto} type="video/mp4"/>
                 Tu navegador no soporta videos HTML5.
             </video>
         );
     } else {
         return (
-            <video width="100%" height="100%" autoPlay loop muted controls>
+            <video width="100%" height="100%" autoPlay loop muted>
                 <source src={videoSrc} type="video/mp4"/>
                 Tu navegador no soporta videos HTML5.
             </video>
