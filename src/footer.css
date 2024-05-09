@@ -1,0 +1,32 @@
+.App-footer {
+    background-color: #fff;
+    padding: 10px 70px; /* El primero es el vertical y el segundo el horizontal */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+  }
+  
+  .Logo-footer {
+    height: 40px;
+    margin-left: 70px;
+  }
+  
+  .footer-buttons {
+    display: flex;
+  }
+  
+  .footer-buttons button {
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #0099CC;
+    border: none;
+  }
+
+  .footer-buttons .btn-final{
+    margin-right: 70px;
+  }

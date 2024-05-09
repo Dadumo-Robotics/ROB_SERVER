@@ -1,0 +1,70 @@
+.App-header {
+    background-color: #fff;
+    padding: 10px 60px; /* El primero es el vertical y el segundo el horizontal */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .App-logo {
+    height: 60px;
+  }
+  
+  .header-buttons {
+    display: flex;
+  }
+  
+  .header-buttons button {
+    margin-right: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .header-buttons .btn-main{
+    background-color: #0099CC;
+    color: #ffffff;
+    margin-right: 130px;
+  }  
+  
+  .header-buttons .btn-second{
+    background-color: #ffffff;
+    color: #000514;
+    border: 1px solid rgb(164, 164, 164)
+  }
+  
+/* Para tablets en posición vertical y móviles */
+@media screen and (max-width: 768px) {
+  .App-header {
+    padding: 10px 20px; /* Reducir el padding para conservar espacio */
+  }
+
+  .header-buttons {
+    flex-direction: column; /* Colocar los botones en columna */
+    align-items: center; /* Centrar los botones */
+  }
+
+  .header-buttons button {
+    margin: 10px 0; /* Añadir margen entre los botones */
+  }
+
+  .header-buttons .btn-main {
+    margin-right: 10px; /* Agregar un margen a la derecha del botón principal */
+  }
+}
+
+/* Para tablets en posición horizontal */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .App-header {
+    padding: 10px 40px; /* Ajustar el padding para mantener el espacio */
+  }
+
+  .header-buttons .btn-main {
+    margin-right: 80px; /* Reducir el margen derecho del botón principal */
+  }
+}
