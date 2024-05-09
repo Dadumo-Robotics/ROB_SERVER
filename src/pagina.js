@@ -10,7 +10,7 @@ function Pagina() {
     
     <div className='Pagina'>
         <Header/>
-        <main>
+        <main className='main'>
           <VideoSection></VideoSection>
         </main>
         <Footer/>
