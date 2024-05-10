@@ -61,3 +61,7 @@ Entramos en la carpeta que acabamos de crear:
 
 cd frontend
 npm install axios react-router-dom jwt-decode
+
+cd frontend  
+npm install
+npm run dev
