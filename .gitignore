@@ -1,2 +1,3 @@
 #Siempre ignorar el espacio virtual
 server_env/
+frontend/src/index.js
