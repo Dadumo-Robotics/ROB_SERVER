@@ -1,5 +1,7 @@
 #Siempre ignorar el espacio virtual
 server_env/
+frontend/node_modules/
+
 backend/api/__pycache__/
 
 backend/api/migrations/__pycache__/

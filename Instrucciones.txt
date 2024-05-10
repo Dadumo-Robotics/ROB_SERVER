@@ -1,0 +1,63 @@
+CREAR UN SERVIDOR DJANGO EN WINDOWS (BACKEND)
+
+Abrimos la terminal en el directorio donde queremos inicializar el servidor (Utilizar CMD no Powershell)
+
+Creamos un entorno virtual de Python utilizando este comando
+
+python -m venv server_env
+
+Luego activaremos el servidor para poder instalar los requerimientos necesarios para el proyecto
+
+server_env\Scripts\activate.bat
+
+A PARTIR DE ESTE PUNTO YA ESTAMOS DENTRO DEL ESPACIO VIRTUAL
+
+Una vez hecho eso procederemos a la instalación. Podemos copiar los requerimientos necesarios para el servidor en el caso de ser necesario para la aplicación que queramos hacer
+
+Aquí la lista de requerimientos:
+
+asgiref
+Django
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt
+PyJWT
+pytz
+sqlparse
+psycopg2-binary
+python-dotenv
+
+Una vez copiados los requerimientos a un txt podemos instalarlos todos a la vez:
+
+pip install -r requirements.txt
+
+Creamos un backend de Django:
+
+django-admin startproject (nombre del backend)
+
+Luego crearemos una app de Django en el directorio del backend
+
+cd backend
+python manage.py startapp api
+
+(PARTE DE LOS SETTINGS ME LA SALTO POR QUE NO ME IMPORTA AHORA QUE LA TENGO HECHA)
+
+Para cambios significativos, migrar (Siempre dentro del Backend):
+
+python manage.py makemigrations 
+python manage.py migrate
+
+Una vez realizada la migración, podemos inicializar el servidor:
+
+python manage.py runserver
+
+INSTALACIÓN DE REACT EN EL PROYECTO (DENTRO DEL ESPACIO VIRTUAL)
+
+Entramos en el directorio base donde tenemos creado el proyecto de Django y el Espacio Virtual:
+
+npm create vite@latest frontend -- --template react
+
+Entramos en la carpeta que acabamos de crear:
+
+cd frontend
+npm install axios react-router-dom jwt-decode
