@@ -1,13 +1,11 @@
 import React from 'react';
 import '../styles/Contacto.css'; // Asegúrate de tener el archivo de estilos CSS
-import logo from '../multimedia/logoDadumo.png';
 
 function Contacto() {
   return (
     <div className="app">
       <main className='main'>
         <div className='contacto-container'>
-          <img src={logo} className="logo" alt="logo" />
           <div className='contacto-form'>
             <h2>Ficha de Contacto</h2>
             <div>

@@ -1,75 +1,60 @@
 .app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .main {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .contacto-container {
-    display: flex;
-    width: 90%;
-    margin-top: -9%;
-    margin-bottom: 10px; /* Reducir el espacio inferior */
-  }
-  
-  .logo {
-    width: 40%;
-    margin-left: 6%;
-    margin-right: 8%;
-  }
-  
-  .contacto-form {
-    width: 40%;
-    height: 64%; 
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #a4a4a4;
-    border-radius: 16px;
-    margin-top: 100px;
-    padding: 20px; /* Añadido para separar los elementos del borde */
-    margin-bottom: 10px; /* Reducir el espacio inferior */
-  }
-  
-  .contacto-form h2 {
-    margin-bottom: 20px;
-  }
-  
-  .contacto-form label {
-    text-align: left;
-    margin-bottom: 5px; /* Espacio entre el label y el input */
-    display: block; /* Cambiado para que estén en una línea vertical */
-  }
-  
-  input, textarea {
-    width: calc(100% - 20px); /* Ajuste para tener margen en los inputs */
-    align-self: center;
-    margin-bottom: 10px;
-  }
-  
-  textarea {
-    height: 100px; /* Ajusta la altura del área de texto */
-  }
-  
-  .btn-enviar {
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: #0099cc;
-    color: #ffffff;
-    padding: 10px 5px;
-    border: none;
-    width: 30%;
-    align-self: flex-end; /* Para alinear el botón a la derecha */
-    margin-top: 10px; /* Agregado para separar el botón de los demás elementos */
-  }
-  
-  h5 {
-    color: #0099cc;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.main {
+  text-align: center;
+}
+
+.contacto-container {
+  width: 250%; /* Ajusta el ancho según tus necesidades */
+  max-width: 1000px; /* Establece un ancho máximo */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  margin-left: -80%; /* Aplica un margen izquierdo negativo para centrar el contenedor */
+  border: 1px solid #ccc; /* Color del borde y grosor */
+  border-radius: 8px; /* Borde redondeado */
+  padding: 5%; /* Espacio interno como porcentaje del ancho */
+  position: relative; /* Para posicionar los elementos internos relativos a este contenedor */
+  font-size: 16px; /* Ajusta el tamaño de fuente del contenedor principal */
+}
+
+
+.contacto-form {
+  display: flex; /* Establece el contenedor como un flexbox */
+  flex-direction: column; /* Coloca los elementos en columna */
+  position: relative;
+}
+
+.contacto-form div {
+  display: flex; /* Establece los elementos dentro del div como un flexbox */
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+}
+
+.contacto-form label {
+  text-align: left; /* Alinea el texto del label a la izquierda */
+  font-size: 16px; /* Ajusta el tamaño de fuente de los labels */
+  margin-bottom: 10px; /* Aumenta el margen inferior entre los labels */
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 10px; /* Aumenta el espacio interior de los inputs y textareas */
+  font-size: 16px; /* Ajusta el tamaño de fuente de los inputs y textareas */
+  margin-bottom: 15px; /* Aumenta el margen inferior entre los inputs y textareas */
+  box-sizing: border-box;
+}
+
+.btn-enviar {
+  background-color: #0099CC; /* color de fondo del botón */
+  color: white; /* color del texto del botón */
+  border: none; /* elimina el borde del botón */
+  padding: 12px 24px; /* Aumenta el espacio interior del botón */
+  border-radius: 5px; /* borde redondeado del botón */
+  margin-top: 20px; /* Aumenta el margen superior del botón */
+  font-size: 16px; /* Ajusta el tamaño de fuente del botón */
+}
