@@ -1,0 +1,6 @@
+/* Esto es para que el footer siempre este abajo */
+.App{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
