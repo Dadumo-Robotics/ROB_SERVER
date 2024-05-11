@@ -1,32 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
 .App-footer {
-    background-color: #fff;
-    padding: 10px 70px; /* El primero es el vertical y el segundo el horizontal */
-    width: 100%;
-    display: flex;
+  background-color: #fff;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  overflow-x: hidden;
+  margin-top: auto;
+}
+
+.Logo-footer {
+  height: 40px;
+  width: 40px;
+  margin-left: 70px;
+}
+
+.footer-buttons {
+  justify-content: center; /* Añadido para centrar los botones */
+}
+
+.footer-buttons a {
+  margin-right: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #0099CC;
+  border: none;
+  text-decoration: none;
+}
+
+.footer-buttons .btn-final{
+  margin-right: 70px;
+}
+
+@media (max-width: 600px) {
+  .App-footer {
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
   }
-  
-  .Logo-footer {
-    height: 40px;
-    margin-left: 70px;
+
+  .Logo-footer{
+    height: auto;
+    width: 30%;
+    margin-left: 2rem;
+    margin-bottom: -5px;
   }
-  
+
   .footer-buttons {
-    display: flex;
+    display: flex; /* Movido dentro de la media query */
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
   }
-  
-  .footer-buttons button {
-    margin-right: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: #ffffff;
-    color: #0099CC;
-    border: none;
+
+  .footer-buttons a {
+    margin-bottom: 5px;
   }
 
   .footer-buttons .btn-final{
-    margin-right: 70px;
+    padding-bottom: 10px;
+    margin-right: 20px;
   }
+}
