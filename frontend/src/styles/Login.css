@@ -1,11 +1,12 @@
-.app {
+.app-login {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  text-align: center;
 }
 
-.main {
+.main-login {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -14,36 +15,61 @@
 .login-container {
   display: flex;
   width: 90%;
-  margin-top: -9%;
+  height: fit-content;
 }
 
-.logo {
-  width: 40%;
-  margin-left: 6%;
-  margin-right: 8%;
+@media (prefers-reduced-motion: no-preference) {
+  .logo-login {
+    animation: App-logo-spin infinite 40s linear;
+  }
 }
 
-.inputs-container {
-  width: 40%;
-  height: 310px;
+.logo-login {
+  width: 68vh; /* Establece el ancho del logo */
+  height: 68vh; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+  margin: 0vh 25vh 0vh 12vh;
+  /* border: 1px solid #a4a4a4; */
+  object-fit: contain;
+}
+
+.titulo-login{
+  font-size: 2rem;
+}
+
+.inputs-container-login {
+  width: 35%;
   display: flex;
   flex-direction: column;
   border: 1px solid #a4a4a4;
   border-radius: 16px;
-  margin-top: 100px;
-}
-
-.inputs-container label {
-  margin: 5px 9.3%;
-  text-align: left;
-  width: 80%;
-}
-
-input {
-  width: 80%;
   align-self: center;
-  height: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 1.5vh;
+}
+
+.label-login {
+  display: block;
+  margin-bottom: .4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #010203;
+}
+
+.input-style-login {
+  padding: 10px;
+  border: 2px solid #a4a4a4;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
+  width: 75%;
+  align-self: center;
+  height: 3.5vh;
+  margin-bottom: 1.5vh
+}
+
+.input-style-login:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .btn-login {
@@ -52,17 +78,78 @@ input {
   font-weight: bold;
   background-color: #0099cc;
   color: #ffffff;
-  padding: 10px 5px;
+  padding: 1.5vh 1vh;
   border: none;
-  width: 30%;
+  width: 40%;
   align-self: center;
+  margin-bottom: 4vh;  
+  font-size: 1.1rem;
 }
 
-.btn-Register {
+.btn-toRegister {
   cursor: pointer;
   font-weight: bold;
   background-color: #ffffff;
   color: #0099CC;
   border: 0px solid transparent ;
-  padding: 10px 0px 20px 0px;
+  padding: 1.5vh 0px 3vh 0px;
+  font-size: 1.1rem;
+}
+
+/* --- VISTA TABLET --- */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .logo-login {
+    width: 30vh; /* Reducir el tamaño del logo */
+    margin: 0 6vh 0 0vh; /* Ajustar los márgenes */
+  }
+
+  .login-container{
+    margin-top: 0vh;
+  }
+
+  .inputs-container-login {
+    width: 60%; /* Reducir el ancho del contenedor de inputs */
+  }
+
+  input {
+    width: 80%; /* Reducir el ancho de los inputs */
+    margin: 0.65vh 0;
+  }
+
+  .btn-login,
+  .btn-toRegister {
+    width: 50%; /* Reducir el ancho de los botones */
+    align-self: center;
+  }
+
+  .btn-login{
+    margin-bottom: 2.6vh;
+  }
+}
+
+
+/* --- VISTA TELEFONOS --- */
+@media only screen and (max-width: 600px) {
+  .logo-login {
+    display: none; /* Oculta la imagen en dispositivos móviles */
+  }
+
+  .inputs-container-login {
+    width: 100%; /* Ajusta el ancho del contenedor de inputs en dispositivos móviles */
+    height: fit-content;
+  }
+
+  input {
+    width: 75%;
+    align-self: center;
+    height: 30px;
+    margin: 0.6vh 0;
+  }
+
+  .btn-login,
+  .btn-toRegister {
+    align-self: center;
+    width: 80%; /* Ajusta el ancho de los botones en dispositivos móviles */
+    border-radius: 8px; /* Elimina el redondeo de bordes en dispositivos móviles */
+  }
 }

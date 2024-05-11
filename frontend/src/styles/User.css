@@ -1,0 +1,77 @@
+/* Estilos generales */
+.app-user {
+    width: 100%;
+  }
+  
+  .main-user {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  /* Estilos de la tabla */
+  .main-user .tabla-user {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .main-user th, .main-user td {
+    border-bottom: 1px solid #ddd;
+    padding: 2vh;
+    text-align: left;
+    font-size: 16pt;
+  }
+  
+  .main-user th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos de los botones */
+  .main-user button {
+    padding: 1vh 2vh;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16pt;
+    margin-right: 1vw; /* Agregamos espacio entre los botones */
+  }
+  
+  .main-user .btn-container-user {
+    text-align: right; /* Alineamos los botones a la derecha */
+  }
+  
+  .main-user .btn-editar-user, .btn-monitoreo-user {
+    background-color: #0099cc;
+    color: white;
+  }
+  
+  .main-user .btn-eliminar-user {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  /* Estilos para tablets */
+  @media (max-width: 1024px) {
+    .main-user .btn-container-user {
+      text-align: center; /* Centramos los botones */
+    }
+  
+    .main-user button {
+      display: block; /* Hacemos que los botones ocupen toda la anchura */
+      margin-right: 0; /* Quitamos el margen derecho */
+      margin-bottom: 1vh; /* Agregamos espacio entre los botones */
+    }
+  }
+  
+  /* Estilos para teléfonos */
+  @media (max-width: 767px) {
+    .main-user button {
+      display: block; /* Hacemos que los botones ocupen toda la anchura */
+      margin-right: 0; /* Quitamos el margen derecho */
+      margin-bottom: 1vh; /* Agregamos espacio entre los botones */
+    }
+  }
+  

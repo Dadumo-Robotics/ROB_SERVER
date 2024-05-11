@@ -1,76 +1,157 @@
-.app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+.app-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.main-register {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.register-container {
+  display: flex;
+  width: 90%;
+  height: fit-content;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-register {
+    animation: App-logo-spin infinite 40s linear;
   }
-  
-  .main {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .register-container {
-    display: flex;
-    width: 90%;
-    margin-top: -12%;
+}
+
+.logo-register { 
+  width: 64vh; /* Establece el ancho del logo */
+  height: 64vh; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+  margin: 4.5vh 25vh 0vh 17vh;
+  /* border: 1px solid #a4a4a4; */
+  object-fit: contain;
+}
+
+.inputs-container-register {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #a4a4a4;
+  border-radius: 16px;
+  margin-top: -2vh;
+}
+
+.titulo-register{
+  font-size: 2rem;
+}
+
+.label-register {
+  display: block;
+  margin-bottom: .4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #010203;
+}
+
+.input-style-register {
+  padding: 10px;
+  border: 2px solid #a4a4a4;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
+  width: 75%;
+  align-self: center;
+  height: 3.5vh;
+  margin-bottom: 1.5vh;
+}
+
+.input-style-register:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-register {
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #0099cc;
+  color: #ffffff;
+  padding: 1.5vh 5vh;
+  border: none;
+  width: 50%;
+  align-self: center;
+  margin-bottom: 4vh;
+  font-size: 1.1rem;
+}
+
+.btn-toLogin {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #0099CC;
+  border: 0px solid transparent ;
+  padding: 1.4vh 0px 2.8vh 0px;
+  font-size: 1.1rem;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .logo { 
-    width: 60vh; /* Establece el ancho del logo */
-    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-    margin: 10vh 25vh 0vh 12vh;
-    /* border: 1px solid #a4a4a4; */
-    object-fit: contain;
-  }
-  
-  .inputs-container {
-    width: 40%;
-    height: 71vh;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #a4a4a4;
-    border-radius: 16px;
-  }
-  
-  .inputs-container label {
-    margin: 5px 9.3%;
-    text-align: left;
-    width: 80%;
-  }
-  
-  input {
-    width: 80%;
-    align-self: center;
-    height: 3.5vh;
-    margin-bottom: 1.5vh;
-  }
-  
-  .btn-register {
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: #0099cc;
-    color: #ffffff;
-    padding: 1.5vh 5vh;
-    border: none;
-    width: 30%;
-    align-self: center;
-  }
-  
+/* --- VISTA TABLET --- */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+.logo-register {
+  width: 30vh; /* Reducir el tamaño del logo */
+  margin: -7vh 6vh 0 0vh; /* Ajustar los márgenes */
+}
+
+.inputs-container-register {
+  width: 60%; /* Reducir el ancho del contenedor de inputs */
+  height: fit-content;
+}
+
+input {
+  width: 80%; /* Reducir el ancho de los inputs */
+  margin: 0.65vh 0;
+}
+
+.btn-register,
 .btn-toLogin {
-    cursor: pointer;
-    font-weight: bold;
-    background-color: #ffffff;
-    color: #0099CC;
-    border: 0px solid transparent ;
-    padding: 1.4vh 0px 2.8vh 0px;
-    }
-  
+  width: 80%; /* Reducir el ancho de los botones */
+  height: 4vh;
+  align-self: center;
+  margin-bottom: 1vh;
+
+}
+
+.btn-register{
+  margin-bottom: 3vh;
+}
+}
+
+
+/* --- VISTA TELEFONOS --- */
+@media only screen and (max-width: 600px) {
+.logo-register {
+  display: none; /* Oculta la imagen en dispositivos móviles */
+}
+
+.inputs-container-register {
+  width: 100%; /* Ajusta el ancho del contenedor de inputs en dispositivos móviles */
+  height: fit-content;
+  border: none;
+  margin-top: -3vh;
+}
+
+.inputs-container-register input {
+  width: 75%;
+  align-self: center;
+  height: 30px;
+  margin: 0.6vh 0;
+}
+
+.btn-toLogin,
+.btn-register {
+  align-self: center;
+  width: 80%; /* Ajusta el ancho de los botones en dispositivos móviles */
+  border-radius: 8px; /* Elimina el redondeo de bordes en dispositivos móviles */
+}
+}
