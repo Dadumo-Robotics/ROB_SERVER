@@ -1,6 +1,6 @@
 import React from 'react';
-import './contacto.css'; // Asegúrate de tener el archivo de estilos CSS
-import logo from './logoDadumo.png';
+import '../styles/Contacto.css'; // Asegúrate de tener el archivo de estilos CSS
+import logo from '../multimedia/logoDadumo.png';
 
 function Contacto() {
   return (

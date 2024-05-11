@@ -1,23 +1,65 @@
 import React from 'react';
 import './App.css';
-import Header from './header'; // Importa el componente Header
-import Footer from './footer'; // Importa el componente Footer
+import Header from './pages/Header'; // Importa el componente Header
+import Footer from './pages/Footer'; // Importa el componente Footer
 // import Component from './component';
-import Register from './register';
-import Login from './login';
-import VideoSection from './video_section'
+// import Register from './register';
+// import Login from './login';
+import VideoSection from './pages/VideoSection'
 
+import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import ProtectedRoute from './components/ProtectedRoutes';
+
+function Logout(){
+  localStorage.clear()
+  return <Navigate to="/login"/>
+}
+
+function RegisterAndLogout(){
+  localStorage.clear()
+  return <Register />
+}
+
+/*
 function App() {
   return (
     <div className="App">
       <Header /> 
       <main className='main'>
-        {/* <Component /> */}
+        {/* <Component /> *//*}
         <Register />
       </main>
       <Footer />
     </div>
   );
 }
+*/
+
+function App() {
+  return (
+    <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                  <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<RegisterAndLogout/>} />
+          <Route path='*' element={<NotFound/>} />
+        </Routes>
+
+        
+      </BrowserRouter>
+  );
+}
+
 
 export default App;

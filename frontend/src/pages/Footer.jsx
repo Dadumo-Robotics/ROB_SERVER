@@ -1,6 +1,6 @@
 import React from 'react';
-import './footer.css';
-import logo from './logo.svg'; // Importa la imagen de React
+import '../styles/Footer.css';
+import logo from '../multimedia/logo.svg'; // Importa la imagen de React
 
 function Footer() {
   return (

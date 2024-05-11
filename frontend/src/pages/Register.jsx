@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logoDadumo.png';
-import './register.css';
+import logo from '../multimedia/logoDadumo.png';
+import '../styles/Register.css';
 
 function Login() {
   return (
