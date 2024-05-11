@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import Header from './header'; // Importa el componente Header
-import Footer from './footer'; // Importa el componente Footer
+import Header from './pages/Header'; // Importa el componente Header
+import Footer from './pages/Footer'; // Importa el componente Footer
 // import Component from './component';
-import Register from './register';
-import Login from './login';
-import VideoSection from './video_section'
+// import Register from './register';
+// import Login from './login';
+import VideoSection from './pages/VideoSection'
 
-import {BrowserRouter, Routes, Route, Navigation} from "react-router-dom"
+import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
@@ -41,8 +41,7 @@ function App() {
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
         <Routes>
           <Route
             path="/"
@@ -52,12 +51,13 @@ function App() {
               </ProtectedRoute>
             }
           />
-
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<RegisterAndLogout/>} />
+          <Route path='*' element={<NotFound/>} />
         </Routes>
 
         
       </BrowserRouter>
-    </>
   );
 }
 

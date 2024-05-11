@@ -1,6 +1,6 @@
 import React from 'react';
-import './header.css';
-import logo from './logo.svg'; // Importa la imagen de React
+import '../styles/Header.css';
+import logo from '../multimedia/logo.svg'; // Importa la imagen de React
 
 function Header() {
   return (

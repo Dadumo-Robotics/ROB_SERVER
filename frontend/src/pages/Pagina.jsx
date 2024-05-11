@@ -1,8 +1,8 @@
-import logo from './logo.svg';
-import './pagina.css';
-import VideoSection from './video_section'
-import Footer from './footer'
-import Header from './header'
+import logo from '../mutimedia/logo.svg';
+import '../styles/Pagina.css';
+import VideoSection from './VideoSection'
+import Footer from './Footer'
+import Header from './Header'
 
 
 function Pagina() {

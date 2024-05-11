@@ -1,6 +1,6 @@
 import React from 'react';
-import videoSrc from './multimedia/homero.mp4';
-import videoSrcSecreto from './multimedia/homero.mp4';
+import videoSrc from '../multimedia/homero.mp4';
+import videoSrcSecreto from '../multimedia/homero.mp4';
 
 function VideoSection() {
     return (
