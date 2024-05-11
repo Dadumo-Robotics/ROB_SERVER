@@ -10,6 +10,7 @@ import VideoSection from './pages/VideoSection'
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Movement from './pages/Movement';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import User from './pages/User';
@@ -56,6 +57,7 @@ function App() {
           />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<RegisterAndLogout />} />
+          <Route path='/movement' element={<Movement />} />
           <Route path='/admin' element={<Admin />} />
           <Route path='/user' element={<User />} />
           <Route path='/contacto' element={<Contacto />} />
