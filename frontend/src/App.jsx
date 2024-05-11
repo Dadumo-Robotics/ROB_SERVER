@@ -13,6 +13,7 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import User from './pages/User';
+import Contacto from './pages/Contacto';
 import NotFound from './pages/NotFound';
 import ProtectedRoute from './components/ProtectedRoutes';
 
@@ -57,6 +58,7 @@ function App() {
           <Route path='/register' element={<RegisterAndLogout />} />
           <Route path='/admin' element={<Admin />} />
           <Route path='/user' element={<User />} />
+          <Route path='/contacto' element={<Contacto />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
     </BrowserRouter>
