@@ -1,20 +1,19 @@
 import React from 'react';
 import './App.css';
-import Header from './pages/Header'; // Importa el componente Header
-import Footer from './pages/Footer'; // Importa el componente Footer
 // import Component from './component';
 // import Register from './register';
 // import Login from './login';
 
+import ProtectedRoute from './components/ProtectedRoutes';
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Movement from './pages/Movement';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
-import User from './pages/User';
 import Contacto from './pages/Contacto';
 import NotFound from './pages/NotFound';
-import ProtectedRoute from './components/ProtectedRoutes';
+import User from './pages/User';
 
 function Logout(){
   localStorage.clear()
@@ -55,6 +54,7 @@ function App() {
           />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<RegisterAndLogout />} />
+          <Route path='/movement' element={<Movement />} />
           <Route path='/admin' element={<Admin />} />
           <Route path='/user' element={<User />} />
           <Route path='/contacto' element={<Contacto />} />
