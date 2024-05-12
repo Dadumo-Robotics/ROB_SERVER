@@ -5,7 +5,6 @@ import Footer from './pages/Footer'; // Importa el componente Footer
 // import Component from './component';
 // import Register from './register';
 // import Login from './login';
-import VideoSection from './pages/VideoSection'
 
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import Login from './pages/Login';
@@ -47,7 +46,7 @@ function App() {
     <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/home"
             element={
               <ProtectedRoute>
                   <Home />
@@ -59,6 +58,7 @@ function App() {
           <Route path='/admin' element={<Admin />} />
           <Route path='/user' element={<User />} />
           <Route path='/contacto' element={<Contacto />} />
+          <Route path='/' element={<Home />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
     </BrowserRouter>

@@ -16,9 +16,9 @@ function Header() {
 
   return (
     <header>
-      <img src={logo} className="logo-header" alt="logo" />
+      <img src={logo} href='./' className="logo-header" alt="logo" />
       <nav ref={navRef}>
-		<a>Inicio</a>
+		<a href='./'>Inicio</a>
         <a href='./register'>Registro</a>
         <a href='./contacto'>Contáctanos</a>
 				<button
