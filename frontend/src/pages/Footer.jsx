@@ -7,7 +7,6 @@ function Footer() {
     <footer className="App-footer">
       <img src={logo} className="Logo-footer" alt="logo" />
       <div className="footer-buttons">
-        <a>Solución</a>
         <a href='./register'>Registro</a>
         <a>Inicio</a>
         <a href='./contacto' className='btn-final'>Contáctanos</a>

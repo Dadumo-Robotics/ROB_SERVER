@@ -4,6 +4,11 @@
   align-items: center;
   width: 100%;
   text-align: center;
+
+  background-image: url("../multimedia/turtlebot03_fleet.jpg"); /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  height: 100%;
+  background-position: center; /* Centra la imagen en el contenedor */
 }
 
 .main-contacto {
@@ -32,6 +37,8 @@
   flex-direction: column;
   border: 1px solid #a4a4a4;
   border-radius: 16px;
+  background-color: #fff;
+  margin: 5% 0;
 }
 
 .titulo-contacto{
