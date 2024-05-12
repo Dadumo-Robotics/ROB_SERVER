@@ -58,3 +58,20 @@
   margin-top: 20px; /* Aumenta el margen superior del botón */
   font-size: 16px; /* Ajusta el tamaño de fuente del botón */
 }
+
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .contacto-container {
+    width: 90%; /* Cambia el ancho del contenedor al 90% del ancho de la pantalla */
+    margin-left: auto; /* Elimina el margen izquierdo negativo para centrar el contenedor */
+  }
+}
+
+/* Estilos para tablets */
+@media only screen and (min-width: 100%) and (max-width: 120%) {
+  .contacto-container {
+    width: 80%; /* Cambia el ancho del contenedor al 80% del ancho de la pantalla */
+    margin-left: auto; /* Elimina el margen izquierdo negativo para centrar el contenedor */
+  }
+}
