@@ -3,29 +3,27 @@ import '../styles/Contacto.css'; // Asegúrate de tener el archivo de estilos CS
 
 function Contacto() {
   return (
-    <div className="app">
-      <main className='main'>
+    <div className="app-contacto">
+      <main className='main-contacto'>
         <div className='contacto-container'>
-          <div className='contacto-form'>
-            <h2>Ficha de Contacto</h2>
-            <div>
-              <label>Nombre y Apellidos</label>
-              <input type='text' placeholder='Nombre y Apellidos' />
-            </div>
-            <div>
-              <label>Email</label>
-              <input type='email' placeholder='Correo electrónico' />
-            </div>
-            <div>
-              <label>Teléfono</label>
-              <input type='tel' placeholder='Teléfono' />
-            </div>
-            <div>
-              <label>Información Adicional</label>
-              <textarea placeholder='Escribe tu consulta aquí...' />
-            </div>
-            <button className='btn-enviar'>Enviar</button>
+          <h2 className='titulo-contacto'>Ficha de Contacto</h2>
+          <div>
+            <label className='label-contacto'>Nombre y Apellidos</label>
+            <input type='text' className="input-style-contacto" placeholder='Nombre y Apellidos' />
           </div>
+          <div>
+            <label className='label-contacto'>Email</label>
+            <input type='email' className="input-style-contacto" placeholder='Correo electrónico' />
+          </div>
+          <div>
+            <label className='label-contacto'>Teléfono</label>
+            <input type='number' className="input-style-contacto" placeholder='Teléfono' />
+          </div>
+          <div>
+            <label className='label-contacto'>Información Adicional</label>
+            <textarea className="textarea-style-contacto" placeholder='Escribe tu consulta aquí...' />
+          </div>
+          <button className='btn-enviar'>Enviar</button>
         </div>
       </main>
     </div>

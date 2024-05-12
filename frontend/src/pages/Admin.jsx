@@ -19,33 +19,33 @@ function Admin() {
   
     return (
       <div className="admin-user">
-          <main className='main-admin'>
-              <h1>Lista de Usuarios</h1>
-              <table className='tabla-admin'>
-                  <thead className='cabezera-admin'>
-                  <tr>
-                      <th>ID</th>
-                      <th>Nombre</th>
-                      <th>Apellido</th>
-                      <th>Correo electronico</th>
-                      <th></th>
-                  </tr>
-                  </thead>
-                  <tbody className='cuerpo-user'>
-                    <tr>
-                      <td>1</td>
-                      <td>Nombre</td>
-                      <td>Apellido</td>
-                      <td>email@gmail.com</td>
-                      <td className="btn-container-admin">
-                          <button className="btn-editar-admin">Editar</button>
-                          <button className="btn-eliminar-admin">Eliminar</button>
-                      </td>
-                    </tr>
-                  </tbody>
-              </table>
-              <button className='btn-admin-add'>Añadir usuario</button>
-          </main>
+        <main className='main-admin'>
+          <h1>Lista de Usuarios</h1>
+          <table className='tabla-admin'>
+            <thead className='cabezera-admin'>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo electronico</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody className='cuerpo-user'>
+                <tr>
+                  <td>1</td>
+                  <td>Nombre</td>
+                  <td>Apellido</td>
+                  <td>email@gmail.com</td>
+                  <td className="btn-container-admin">
+                    <button className="btn-editar-admin">Editar</button>
+                    <button className="btn-eliminar-admin">Eliminar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button className='btn-admin-add'>Añadir usuario</button>
+        </main>
       </div>
     );
   }

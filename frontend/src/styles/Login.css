@@ -27,13 +27,15 @@
 .logo-login {
   width: 68vh; /* Establece el ancho del logo */
   height: 68vh; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-  margin: 0vh 25vh 0vh 12vh;
+  margin: 5vh 25vh 0vh 12vh;
   /* border: 1px solid #a4a4a4; */
   object-fit: contain;
+  z-index: -1;
 }
 
 .titulo-login{
   font-size: 2rem;
+  margin-top: 1rem;
 }
 
 .inputs-container-login {
@@ -43,15 +45,15 @@
   border: 1px solid #a4a4a4;
   border-radius: 16px;
   align-self: center;
-  margin-bottom: 1.5vh;
+  margin-top: 5vh;
 }
 
 .label-login {
   display: block;
-  margin-bottom: .4rem;
+  margin-top: .4rem;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #010203;
+  color: #000514;
 }
 
 .input-style-login {
@@ -63,7 +65,7 @@
   outline: none;
   width: 75%;
   align-self: center;
-  height: 3.5vh;
+  height: 5vh;
   margin-bottom: 1.5vh
 }
 
@@ -94,6 +96,7 @@
   border: 0px solid transparent ;
   padding: 1.5vh 0px 3vh 0px;
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
 /* --- VISTA TABLET --- */

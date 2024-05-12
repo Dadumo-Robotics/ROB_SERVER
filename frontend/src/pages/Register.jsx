@@ -32,7 +32,7 @@ function Register() {
               <label className='label-register'>Id del producto</label>
               <input type='number' className="input-style-register" placeholder='ej. 123456' />
             </div>
-            <button className='btn-toLogin'>¿Ya tienes cuenta? Inicia sesión</button>
+            <a href='./login' className='btn-toLogin'>¿Ya tienes cuenta? Inicia sesión</a>
             <button className='btn-register'>Registrate</button>
           </div>
         </div>
