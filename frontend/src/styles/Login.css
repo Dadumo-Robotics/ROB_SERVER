@@ -30,6 +30,7 @@
   margin: 5vh 25vh 0vh 12vh;
   /* border: 1px solid #a4a4a4; */
   object-fit: contain;
+  z-index: -1;
 }
 
 .titulo-login{
@@ -49,7 +50,7 @@
 
 .label-login {
   display: block;
-  margin-bottom: .4rem;
+  margin-top: .4rem;
   font-size: 1.2rem;
   font-weight: bold;
   color: #000514;
@@ -95,6 +96,7 @@
   border: 0px solid transparent ;
   padding: 1.5vh 0px 3vh 0px;
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
 /* --- VISTA TABLET --- */

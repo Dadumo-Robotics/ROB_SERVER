@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from '../multimedia/logoDadumo.png';
 import '../styles/Login.css';
-import Header from './Header'; // Importa el componente Header
 
 function Login() {
   return (
@@ -19,7 +18,7 @@ function Login() {
               <label className='label-login'>Contraseña</label>
               <input type='password' className="input-style-login" placeholder='Contraseña' />
             </div>
-            <button className='btn-toRegister'>¿No tienes cuenta? Regístrate</button>
+            <a href='./register' className='btn-toRegister'>¿No tienes cuenta? Regístrate</a>
             <button className='btn-login'>Iniciar sesión</button>
           </div>
         </div>

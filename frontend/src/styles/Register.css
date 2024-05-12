@@ -30,6 +30,7 @@
   margin: 6.5vh 25vh 0vh 17vh;
   /* border: 1px solid #a4a4a4; */
   object-fit: contain;
+  z-index: -1;
 }
 
 .inputs-container-register {
@@ -43,14 +44,15 @@
 
 .titulo-register{
   font-size: 2rem;
+  margin-top: 1rem;
 }
 
 .label-register {
   display: block;
-  margin-bottom: .4rem;
+  margin-top: .4rem;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #010203;
+  color: #000514;
 }
 
 .input-style-register {
@@ -93,7 +95,14 @@
   border: 0px solid transparent ;
   padding: 1.4vh 0px 2.8vh 0px;
   font-size: 1.1rem;
+  text-decoration: none;
   }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 /* --- VISTA TABLET --- */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {

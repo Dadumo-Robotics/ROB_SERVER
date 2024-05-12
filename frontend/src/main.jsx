@@ -8,10 +8,10 @@ import Footer from './pages/Footer.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-    <div className='App'>
-        <Header />
-            <App />
-        <Footer />
+        <div className='App'>
+            <Header />
+                <App />
+            <Footer />
         </div>
     </React.StrictMode>
 )

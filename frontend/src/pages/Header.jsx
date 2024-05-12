@@ -18,7 +18,6 @@ function Header() {
     <header>
       <img src={logo} className="logo-header" alt="logo" />
       <nav ref={navRef}>
-        <a>Solución</a>
         <a href='./register'>Registro</a>
         <a>Inicio</a>
         <a href='./contacto'>Contáctanos</a>
