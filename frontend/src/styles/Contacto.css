@@ -1,77 +1,146 @@
-.app {
+.app-contacto {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 50vh;
-}
-
-.main {
+  width: 100%;
   text-align: center;
 }
 
+.main-contacto {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .contacto-container {
-  width: 250%; /* Ajusta el ancho según tus necesidades */
-  max-width: 1000px; /* Establece un ancho máximo */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  margin-left: -80%; /* Aplica un margen izquierdo negativo para centrar el contenedor */
-  border: 1px solid #ccc; /* Color del borde y grosor */
-  border-radius: 8px; /* Borde redondeado */
-  padding: 5%; /* Espacio interno como porcentaje del ancho */
-  position: relative; /* Para posicionar los elementos internos relativos a este contenedor */
-  font-size: 16px; /* Ajusta el tamaño de fuente del contenedor principal */
-  z-index: -1;
-}
-
-
-.contacto-form {
-  display: flex; /* Establece el contenedor como un flexbox */
-  flex-direction: column; /* Coloca los elementos en columna */
+  /* width: 250%; 
+  max-width: 1000px; 
+  margin: 0 auto; 
+  margin-left: -80%; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  padding: 5%; 
   position: relative;
+  font-size: 16px; 
+   z-index: 0; 
+  display: flex; 
+  flex-direction: column; 
+  position: relative; */
+
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #a4a4a4;
+  border-radius: 16px;
 }
 
-.contacto-form div {
-  display: flex; /* Establece los elementos dentro del div como un flexbox */
-  flex-direction: column; /* Coloca los elementos en columna */
-  align-items: flex-start; /* Alinea los elementos a la izquierda */
+.titulo-contacto{
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 
-.contacto-form label {
-  text-align: left; /* Alinea el texto del label a la izquierda */
-  font-size: 16px; /* Ajusta el tamaño de fuente de los labels */
-  margin-bottom: 10px; /* Aumenta el margen inferior entre los labels */
+.label-contacto {
+  display: block;
+  margin-top: .4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000514;
+
 }
 
-.contacto-form input,
-.contacto-form textarea {
-  width: 100%; /* Ocupa todo el ancho disponible */
-  padding: 10px; /* Aumenta el espacio interior de los inputs y textareas */
-  font-size: 16px; /* Ajusta el tamaño de fuente de los inputs y textareas */
-  margin-bottom: 15px; /* Aumenta el margen inferior entre los inputs y textareas */
+/* .contacto-container div {
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+} */
+
+/* .contacto-container label {
+  text-align: left; 
+  font-size: 16px; 
+  margin-bottom: 10px; 
+} */
+
+.input-style-contacto {
+  padding: 10px;
+  border: 2px solid #a4a4a4;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
+  width: 75%;
+  align-self: center;
+  height: 5vh;
+  margin-bottom: 1.5vh;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.textarea-style-contacto {
+  padding: 10px;
+  border: 2px solid #a4a4a4;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
+  width: 75%;
+  align-self: center;
+  height: 20vh;
+  margin-bottom: 1.5vh;
+}
+
+.input-style-contacto:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* .contacto-container input,
+textarea {
+  width: 100%; 
+  padding: 10px; 
+  font-size: 16px;
+  margin-bottom: 15px;
   box-sizing: border-box;
-}
+} */
 
 .btn-enviar {
-  background-color: #0099CC; /* color de fondo del botón */
-  color: white; /* color del texto del botón */
-  border: none; /* elimina el borde del botón */
-  padding: 12px 24px; /* Aumenta el espacio interior del botón */
-  border-radius: 5px; /* borde redondeado del botón */
-  margin-top: 20px; /* Aumenta el margen superior del botón */
-  font-size: 16px; /* Ajusta el tamaño de fuente del botón */
+  /* background-color: #0099CC; 
+  color: white;
+  border: none; 
+  padding: 12px 24px; 
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 16px;  */
+
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #0099cc;
+  color: #ffffff;
+  padding: 1.5vh 5vh;
+  border: none;
+  width: 50%;
+  align-self: center;
+  margin: 1vh 0 3.5vh 0; /* Arriba,derecha, abajo, izquierda */
+  /* margin-bottom: 4vh; */
+  font-size: 1.1rem;
 }
 
 /* Estilos para dispositivos móviles */
 @media only screen and (max-width: 600px) {
   .contacto-container {
     width: 90%; /* Cambia el ancho del contenedor al 90% del ancho de la pantalla */
-    margin-left: auto; /* Elimina el margen izquierdo negativo para centrar el contenedor */
+    margin-top: 2vh;
   }
 }
 
 /* Estilos para tablets */
-@media only screen and (min-width: 100%) and (max-width: 120%) {
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
   .contacto-container {
     width: 80%; /* Cambia el ancho del contenedor al 80% del ancho de la pantalla */
-    margin-left: auto; /* Elimina el margen izquierdo negativo para centrar el contenedor */
+    margin-top: 6vh;
   }
 }
