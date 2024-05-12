@@ -1,0 +1,339 @@
+/* ----------------------- */
+/* --- PRIMERA SECCION --- */
+/* ----------------------- */
+
+.section1 {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.section1 .content1 {
+    position: relative; 
+    z-index: 1; 
+    margin-top: -30vh;
+}
+
+.section1 h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.section1 p {
+    font-size: 1.7em;
+    color: #fff;
+}
+  
+/* ----------------------- */
+/* --- SEGUNDA SECCION --- */
+/* ----------------------- */
+
+.section2 {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.section2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Capa blanca con opacidad */
+}
+
+.content2 {
+    position: relative; /* Para que los elementos internos se posicionen relativos a este contenedor */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.text-container {
+    position: absolute;
+    width:30%; /* Ajusta según tu diseño */
+    margin: 5% 0 0 5%;
+}
+
+.section2 .text-container h2{
+    font-size: 4rem;
+}
+
+.section2 .text-container p{
+    font-size: 2rem;
+}
+
+.images-container {
+    position: flex;
+    top: 20%;
+    width: 40%; /* Ajusta según tu diseño */
+}
+
+.modelo {
+    margin-top: -25%;
+    margin-left: 95%;
+    width: 50%;
+}
+
+.tutel {
+    margin-top: 22%;
+    margin-left: 130%;
+    width: 85%;
+}
+
+.logo-dadumo {
+    margin-top: -40%;
+    margin-left: 195%;
+    width: 40%;
+}
+
+
+/* ----------------------- */
+/* --- TERCERA SECCION --- */
+/* ----------------------- */
+
+.section3 {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center top; /* Ajuste en la posición vertical */
+}
+
+.section3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Capa blanca con opacidad */
+}
+
+.content3 {
+    position: relative; /* Para que los elementos internos se posicionen relativos a este contenedor */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.section3 .text-container {
+    width: 35%; /* Ajusta según tu diseño */
+    top: 10%;
+    right: 5%;
+}
+
+.section3 .text-container h2{
+    font-size: 4rem;
+}
+
+.section3 .text-container p{
+    font-size: 2rem;
+}
+
+.gazebo{
+    width: 110%;
+    margin: 23% 0% 0 20% ;
+}
+.pcGazebo{
+    width: 60%;
+    margin: -20% 0% 0 80% ;
+} 
+
+/* --------------------------------- */
+/* --- ORDENADOR POCA RESOLUCION --- */
+/* --------------------------------- */
+@media only screen and (min-width: 901px) and (max-width: 1300px) {   
+    /* Textos seccion 2 */ 
+    .text-container {
+        width: 40%;
+        margin: 10% 0 0 5%;
+    }
+
+    .section2 .text-container h2{
+        font-size: 3rem;
+    }    
+    
+    .section2 .text-container p{
+        font-size: 1.7rem;
+    }    
+    
+    /* Textos seccion 3 */
+    .section3 .text-container h2{
+        font-size: 3rem;
+        margin-top: -15%;
+    }
+
+    .section3 .text-container p{
+        font-size: 1.7rem;
+    }
+
+    /* Imagen seccion 2 */
+    .tutel {
+        margin-top: 55%;
+        margin-left: 130%;
+        width: 85%;
+    }
+
+    /* Imagen seccion 3 */
+    .gazebo{
+        margin: 60% 0% 0 20% ;
+    }
+}
+
+/* --------------- */
+/* --- TABLETS --- */
+/* --------------- */
+@media only screen and (min-width: 601px) and (max-width: 900px) { 
+    /* Textos seccion 2 */   
+    .text-container {
+        width: 50%;
+        margin: 10% 0 0 5%;
+    }
+
+    .section2 .text-container h2{
+        font-size: 4rem;
+    }    
+    
+    .section2 .text-container p{
+        font-size: 2rem;
+    }   
+
+    /* Textos seccion 3 */
+    .section3 .text-container {
+        width: 50%;
+        top: 10%;
+        right: 5%;
+    }
+
+    .section3 .text-container h2{
+        font-size: 3rem;
+        margin-top: -15%;
+        margin-right: 10%;
+    }
+    
+    .section3 .text-container p{
+        font-size: 2rem;
+    }
+
+    /* Imagenes de la seccion 2 */
+    .modelo {
+        margin-top: -45%;
+        margin-left: 25%;
+        width: 110%;
+    }
+    
+    .tutel {
+        margin-top: 145%;
+        margin-left: 100%;
+        width: 150%;
+    }
+    
+    .logo-dadumo {
+        margin-top: -70%;
+        margin-left: 155%;
+        width: 100%;
+    }
+
+    /* Imagenes de la seccion 3 */
+    .gazebo{
+        width: 200%;
+        margin: 170% 0% 0 10% ;
+    }
+    .pcGazebo{
+        width: 100%;
+        margin: -35% 0% 0 140% ;
+    } 
+}
+
+/* ---------------- */
+/* --- TELEFONO --- */
+/* ---------------- */
+@media only screen and (max-width: 600px) { 
+        /* Textos seccion 2 */   
+        .text-container {
+            width: 80%;
+            margin: 10% 0 0 5%;
+        }
+    
+        .section2 .text-container h2{
+            font-size: 3rem;
+        }    
+        
+        .section2 .text-container p{
+            font-size: 2rem;
+        }   
+    
+        /* Textos seccion 3 */
+        .section3 .text-container {
+            width: 80%;
+            top: 7%;
+            right: 12.5%;
+        }
+    
+        .section3 .text-container h2{
+            font-size: 3rem;
+            margin-top: -15%;
+            margin-right: 10%;
+        }
+        
+        .section3 .text-container p{
+            font-size: 2rem;
+        }
+    
+        /* Imagenes de la seccion 2 */
+        .modelo {
+            margin-top: -45%;
+            margin-left: 25%;
+            width: 110%;
+        }
+        
+        .tutel {
+            margin-top: 260%;
+            margin-left: 100%;
+            width: 150%;
+        }
+        
+        .logo-dadumo {
+            margin-top: -70%;
+            margin-left: 155%;
+            width: 100%;
+        }
+    
+        /* Imagenes de la seccion 3 */
+        .gazebo{
+            width: 200%;
+            margin: 360% 0% 0 10% ;
+        }
+        .pcGazebo{
+            width: 100%;
+            margin: -35% 0% 0 140% ;
+        }
+}
