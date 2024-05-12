@@ -1,3 +1,13 @@
+/*body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}*/
+
+.app-movemevent{
+    height: 100vh;
+}
+
 .movement-container {
     height: 100%;
     margin: 0;
@@ -23,7 +33,7 @@
     left: 20px;
 }
 
-button {
+/*button {
     display: block;
     margin-bottom: 10px;
     padding: 10px;
@@ -31,20 +41,78 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}*/
+#controls button {
+    display: block;
+    margin-bottom: 15px; /* Espacio entre botones */
+    padding: 15px 30px; /* Aumentar el padding para hacer el botón más grande */
+    border: none;
+    border-radius: 8px; /* Bordes ligeramente más redondeados */
+    cursor: pointer;
+    font-size: 1.3em; /* Aumentar el tamaño de la fuente para mejorar la legibilidad */
+    font-weight: bold; /* Opcional: Hacer el texto más prominente */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Opcional: Añadir una sombra ligera para efecto 3D */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves al interactuar */
+
+    width: 25vh; /* Usa un porcentaje del contenedor padre para el ancho */
+    text-align: center; /* Centra el texto dentro del botón */
+    min-width: 180px; /* Un mínimo para asegurar la usabilidad en pantallas pequeñas */
+    max-width: 300px; /* Un máximo para no sobredimensionar en pantallas grandes */
+    height: 8vh;          /* Altura basada en el alto del viewport */
+}
+
+#back-button {
+    background-color: #0099CC; /* Color de fondo más claro */
+}
+
+#other-button {
+    background-color: #FF6600; /* Color de fondo más oscuro */
+}
+
+button:hover, button:focus {
+    background-color: #e6e6e6; /* Cambio de color al pasar el ratón o enfocar */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra más prominente al pasar el ratón o enfocar */
+}
+
+button:active {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Efecto de presión al hacer clic */
+}
+
+#map-container {
+    position: absolute;
+    top: 5vh; /* 5% del alto del viewport */
+    right: 5vw; /* 5% del ancho del viewport */
+    width: 30vw; /* 30% del ancho del viewport */
+    max-width: 350px; /* Máximo ancho fijo */
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
 }
 
 #map {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     background-color: #FFF;
-    padding: 10px;
+    padding: 0px;
     border-radius: 5px;
 }
 
-#arrows {
+#map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen del mapa cubra todo el espacio sin deformarse */
+}
+
+#coordinates {
+    width: 100%;
+    padding: 0px;
+    text-align: center; /* Centra el texto horizontalmente */
+    background-color: #FFF; /* Fondo blanco para que coincida con el mapa */
+    border-radius: 0 0 5px 5px; /* Bordes redondeados solo en la parte inferior */
+    font-size: 0.9em; /* Ajusta el tamaño de la fuente si es necesario */
+    color: #333; /* Color del texto oscuro para mejor legibilidad */
+}
+
+/*#arrows {
     position: absolute;
     bottom: 20px;
     width: 100%;
@@ -58,10 +126,57 @@ button {
     flex-direction: column;
 }
 
+#horizontal-arrows {
+    margin-right: 40px; /* Añadido margen derecho */
+/*}
+
 .arrow {
     margin: 5px;
     background-color: #FFF;
     padding: 15px 25px;
     font-size: 16px;
     border-radius: 5px;
+}*/
+
+#arrows {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.arrow-box {
+    display: flex;
+    flex-direction: column; /* Esto es para las flechas verticales */
+}
+
+#horizontal-arrows {
+    flex-direction: row; /* Esto cambia la disposición de las flechas horizontales para estar lado a lado */
+    margin-right: 20vh; /* Añadido margen derecho */
+    align-items: center;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.arrow {
+    margin: 5px;
+    background-color: #FFF;
+    padding: 15px 25px; /* Aumentamos el padding para hacer el botón más grande */
+    font-size: 10vh; /* Aumentamos el tamaño de la fuente */
+    border-radius: 5px;
+    width: 15vh; /* Añadimos un ancho fijo para hacerlos más grandes y uniformes */
+    height: 15vh; /* Añadimos una altura fija */
+    display: flex;
+    align-items: center; /* Centramos el contenido del botón verticalmente */
+    justify-content: center; /* Centramos el contenido del botón horizontalmente */
+}
+
+#vertical-arrows .arrow:first-child {
+    margin-bottom: 100%;  /* Aumenta el margen inferior del botón superior */
+}
+
+#horizontal-arrows .arrow:first-child {
+    margin-right: 50%;  /* Aumenta el margen inferior del botón superior */
 }
