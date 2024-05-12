@@ -5,7 +5,6 @@ import Footer from './pages/Footer'; // Importa el componente Footer
 // import Component from './component';
 // import Register from './register';
 // import Login from './login';
-import VideoSection from './pages/VideoSection'
 
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import Login from './pages/Login';
