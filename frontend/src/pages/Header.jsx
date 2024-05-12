@@ -18,8 +18,8 @@ function Header() {
     <header>
       <img src={logo} className="logo-header" alt="logo" />
       <nav ref={navRef}>
+		<a>Inicio</a>
         <a href='./register'>Registro</a>
-        <a>Inicio</a>
         <a href='./contacto'>Contáctanos</a>
 				<button
 					className="nav-btn nav-close-btn"
