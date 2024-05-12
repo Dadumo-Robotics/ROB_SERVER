@@ -5,8 +5,6 @@ import Header from './Header'; // Importa el componente Header
 
 function Login() {
   return (
-    <div>
-    <Header />
     <div className="app-login">
       <main className='main-login'>
         <div className='login-container'>
@@ -26,7 +24,6 @@ function Login() {
           </div>
         </div>
       </main>
-    </div>
     </div>
   );
 }

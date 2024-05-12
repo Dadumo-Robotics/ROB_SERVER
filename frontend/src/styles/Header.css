@@ -1,74 +1,105 @@
-.App-header {
-    background-color: #fff;
-    padding: 10px 60px; /* El primero es el vertical y el segundo el horizontal */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  
-  .App-logo {
-    height: 60px;
-  }
-  
-  .header-buttons {
-    display: flex;
-  }
-  
-  .header-buttons button {
-    margin-left: 10px;
-    padding: 8px 16px;
-    background-color: #61dafb;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-
-  .header-buttons .btn-main{
-    background-color: #0099CC;
-    color: #ffffff;
-    margin-right: 130px;
-  }  
-  
-  .header-buttons .btn-second{
-    background-color: #ffffff;
-    color: #000514;
-    border: 1px solid rgb(164, 164, 164)
-  }
-  
-/* Para tablets en posición vertical y móviles */
-@media screen and (max-width: 768px) {
-  .App-header {
-    padding: 10px 20px; /* Reducir el padding para conservar espacio */
-  }
-
-  .header-buttons {
-    flex-direction: column; /* Colocar los botones en columna */
-    align-items: center; /* Centrar los botones */
-  }
-
-  .header-buttons button {
-    margin: 10px 0; /* Añadir margen entre los botones */
-  }
-
-  .header-buttons .btn-main {
-    margin-right: 10px; /* Agregar un margen a la derecha del botón principal */
-  }
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
-/* Para tablets en posición horizontal */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .App-header {
-    padding: 10px 40px; /* Ajustar el padding para mantener el espacio */
-  }
+:root {
+	--mainColor: #fff;
+	--secondaryColor: #0099cc;
+	--textColor: #000514;
+}
 
-  .header-buttons .btn-main {
-    margin-right: 80px; /* Reducir el margen derecho del botón principal */
+.logo-header{
+  height: 70px;
+  width: 70px;
+}
+
+/* Si el raton encima del logo dar vueltecita */
+.logo-header:hover{
+	animation: App-logo-spin 1 1.5s linear;
+}
+
+
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	padding: 0 2rem;
+	background-color: var(--mainColor);
+	color: var(--textColor);
+}
+
+nav a {
+	margin: 0 1rem;
+	color: var(--textColor);
+	text-decoration: none;
+	font-size: 1.2rem;
+	align-self: center;
+}
+
+nav a:hover {
+	color: var(--secondaryColor);
+}
+
+header .nav-btn {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+header div,
+nav {
+	display: flex;
+	align-items: flex-end;
+}
+
+@media only screen and (max-width: 800px) {
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header nav {
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: var(--mainColor);
+		transition: 1s;
+	}
+
+	header .responsive_nav {
+		transform: translateY(100vh);
+	}
+
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (min-width: 801px) {
+  nav {
+    margin-left: auto;
   }
 }

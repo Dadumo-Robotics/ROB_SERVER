@@ -4,7 +4,6 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  margin-top: 5%;
 }
 
 .main-register {
@@ -28,7 +27,7 @@
 .logo-register { 
   width: 64vh; /* Establece el ancho del logo */
   height: 64vh; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-  margin: 4.5vh 25vh 0vh 17vh;
+  margin: 6.5vh 25vh 0vh 17vh;
   /* border: 1px solid #a4a4a4; */
   object-fit: contain;
 }
@@ -39,7 +38,7 @@
   flex-direction: column;
   border: 1px solid #a4a4a4;
   border-radius: 16px;
-  margin-top: -2vh;
+  margin-top: 3vh;
 }
 
 .titulo-register{
@@ -63,7 +62,7 @@
   outline: none;
   width: 75%;
   align-self: center;
-  height: 3.5vh;
+  height: 5vh;
   margin-bottom: 1.5vh;
 }
 
@@ -100,12 +99,13 @@
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
 .logo-register {
   width: 30vh; /* Reducir el tamaño del logo */
-  margin: -7vh 6vh 0 0vh; /* Ajustar los márgenes */
+  margin: 8vh 6vh 0 0vh; /* Ajustar los márgenes */
 }
 
 .inputs-container-register {
   width: 60%; /* Reducir el ancho del contenedor de inputs */
   height: fit-content;
+  margin-top: 10vh;
 }
 
 input {
