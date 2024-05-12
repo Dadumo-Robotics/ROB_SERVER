@@ -1,21 +1,18 @@
 import React from 'react';
 import './App.css';
-import Header from './pages/Header'; // Importa el componente Header
-import Footer from './pages/Footer'; // Importa el componente Footer
 // import Component from './component';
 // import Register from './register';
 // import Login from './login';
-import VideoSection from './pages/VideoSection'
 
-import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Home from './pages/Home';
-import Admin from './pages/Admin';
-import User from './pages/User';
-import Contacto from './pages/Contacto';
-import NotFound from './pages/NotFound';
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ProtectedRoute from './components/ProtectedRoutes';
+import Admin from './pages/Admin';
+import Contacto from './pages/Contacto';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
+import Register from './pages/Register';
+import User from './pages/User';
 
 function Logout(){
   localStorage.clear()
