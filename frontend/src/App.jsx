@@ -12,10 +12,7 @@ import Movement from './pages/Movement';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Contacto from './pages/Contacto';
-import Home from './pages/Home';
-import Login from './pages/Login';
 import NotFound from './pages/NotFound';
-import Register from './pages/Register';
 import User from './pages/User';
 
 function Logout(){
