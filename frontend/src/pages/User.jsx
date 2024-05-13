@@ -1,5 +1,8 @@
 import React from 'react';
 import '../styles/User.css';
+import { useHref, useNavigate } from 'react-router-dom';
+import { useEffect } from "react"
+
 
 function User() {
     // // Supongamos que la lista de datos viene de una base de datos
@@ -16,6 +19,29 @@ function User() {
     //   ];
     //   setUserData(exampleData);
     // }, []);
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+          try {
+            navigate("/movement")
+  
+        } catch (error) {
+            alert(error)
+        }
+     };
+
+     const navigate2 = useNavigate();
+
+    const handleSubmit2 = async (e) => {
+        e.preventDefault();
+          try {
+            navigate("/login")
+  
+        } catch (error) {
+            alert(error)
+        }
+     };
   
     return (
       <div className="app-user">
@@ -36,13 +62,16 @@ function User() {
                         <td>Robot_1</td>
                         <td>Activo</td>
                         <td className="btn-container-user">
-                            <button className="btn-monitoreo-user">Monitoreo de robot</button>
+                            <button className="btn-monitoreo-user" onClick={ handleSubmit }>Monitoreo de robot</button>
                             <button className="btn-editar-user">Editar</button>
                             <button className="btn-eliminar-user">Eliminar</button>
                         </td>
                     </tr>
+                    
                   </tbody>
+                  
               </table>
+              <button className="btn-eliminar-user" onClick={ handleSubmit2 } >Cerrar Sesión</button>
           </main>
       </div>
     );

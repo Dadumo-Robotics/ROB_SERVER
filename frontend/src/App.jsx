@@ -17,12 +17,12 @@ import User from './pages/User';
 
 function Logout(){
   localStorage.clear()
-  return <Navigate to="/login"/>
+  return <Navigate to="/"/>
 }
 
 function RegisterAndLogout(){
   localStorage.clear()
-  return <Register />
+  return <Register/>
 }
 
 /*
@@ -45,18 +45,25 @@ function App() {
     <BrowserRouter>
         <Routes>
           <Route
-            path="/home"
+            path="/user"
             element={
               <ProtectedRoute>
-                  <Home />
+                  <User />
               </ProtectedRoute>
             }
           />
+          <Route 
+            path='/admin' 
+            element={
+              <ProtectedRoute>
+                <Admin />
+              </ProtectedRoute>
+            }    
+          />
           <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<Logout />} />
           <Route path='/register' element={<RegisterAndLogout />} />
           <Route path='/movement' element={<Movement />} />
-          <Route path='/admin' element={<Admin />} />
-          <Route path='/user' element={<User />} />
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/' element={<Home />} />
           <Route path='*' element={<NotFound />} />

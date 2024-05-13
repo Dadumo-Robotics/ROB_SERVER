@@ -3,7 +3,8 @@ import {jwtDecode} from "jwt-decode"
 import api from "../api" //Esto habrá que descomentarlo
 import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants"
 import { useState, useEffect } from "react"
-import PropTypes from 'prop-types';
+
+//import PropTypes from 'prop-types';
 
 
 
@@ -12,8 +13,10 @@ import PropTypes from 'prop-types';
 function ProtectedRoute({children}){
     const [isAuthorized, setIsAuthorized] = useState(null)
 
+    console.log("Im IN")
+
     useEffect(() => {
-        auth.catch(() => setIsAuthorized(false))
+        auth().catch(() => setIsAuthorized(false))
     }, [])
 
     const refreshToken = async() => {
@@ -71,10 +74,10 @@ function ProtectedRoute({children}){
     /* Si estamos autorizados, devuelve children; si no, nos manda al login (a pasear mindundi!)*/ 
     return isAuthorized ? children : <Navigate to="/login"/>
 }
-
+/*
 // esto es lo que he añadido para arreglar "children", no se si dara un error despues, ¡oh vaya!
 ProtectedRoute.propTypes = {
     children: PropTypes.node
 };
-
+*/
 export default ProtectedRoute

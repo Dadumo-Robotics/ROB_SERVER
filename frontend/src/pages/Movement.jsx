@@ -3,9 +3,23 @@ import '../styles/Movement.css';
 import '../App.css';
 import camara_foto from '../multimedia/FotosMovimiento/camara_casera.png';
 import mapa_foto from '../multimedia/FotosMovimiento/mapa.png';
+import { useNavigate } from "react-router-dom";
 //import movement from '../movement';
 
 function Movement() {
+
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+      try {
+        navigate("/user")
+
+    } catch (error) {
+        alert(error)
+    }
+ };
+
   console.log("entro en la pagina")
 
   // Crear refs para cada elemento del DOM que necesita manejo de eventos o acceso
@@ -66,7 +80,7 @@ function Movement() {
   let data = {
     // ros connection
     ros: null,
-    rosbridge_address: 'ws://192.168.1.133:9090/',
+    rosbridge_address: 'ws://192.168.0.101:9090/',
     //rosbridge_address: '',
     connected: false,
     // service information 
@@ -198,7 +212,7 @@ function Movement() {
           <div id="camera">
             <img src={camara_foto} alt="Vista de la cámara" />
             <div id="controls">
-              <button ref={backButtonRef} id="back-button">Volver</button>
+              <button ref={backButtonRef} id="back-button" onClick={handleSubmit}>Volver</button>
               <button ref={otherButtonRef} id="other-button">Trayecto</button>
             </div>
             <div id="map-container">
