@@ -1,8 +1,9 @@
 import React from 'react';
-import '../styles/Header.css';
+import './Header.css';
 import logo from '../multimedia/logoDadumo.png';
 import { FaBars, FaTimes } from "react-icons/fa"
 import { useRef } from "react"
+
 
 function Header() {
 
@@ -16,22 +17,25 @@ function Header() {
 
   return (
     <header>
-      <img src={logo} href='./' className="logo-header" alt="logo" />
-      <nav ref={navRef}>
-		<a href='./'>Inicio</a>
-        <a href='./register'>Registro</a>
-        <a href='./contacto'>Contáctanos</a>
-				<button
-					className="nav-btn nav-close-btn"
-					onClick={showNavbar}>
-					<FaTimes />
-				</button>
-			</nav>
+		<a href="./">
+			<img src={logo} className="logo-header" alt="logo" />
+		</a>
+		<nav ref={navRef}>
+			<a href='./'>Inicio</a>
+			<a href='./login'>Inicia sesión</a>
+			<a href='./contacto'>Contáctanos</a>
+			{/* MENU HAMBURGUESA */}
 			<button
-				className="nav-btn"
+				className="nav-btn nav-close-btn"
 				onClick={showNavbar}>
-				<FaBars />
+				<FaTimes />
 			</button>
+		</nav>
+		<button
+			className="nav-btn"
+			onClick={showNavbar}>
+			<FaBars />
+		</button>
     </header>
   );
 }

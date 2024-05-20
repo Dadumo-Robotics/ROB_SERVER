@@ -1,3 +1,5 @@
+import React from 'react';
+import { FaArrowDown } from 'react-icons/fa';
 import logo from '../multimedia/logoDadumo.png';
 import tutel from '../multimedia/turtlebot03.jpg';
 import PCGazebo from '../multimedia/pcGazebo.png';
@@ -5,12 +7,15 @@ import gazebo from '../multimedia/gazebo.png';
 import turtlebot03_fleet from '../multimedia/turtlebot03_fleet.jpg';
 import modelo3D from '../multimedia/modelo3d.png';
 import fondo3 from '../multimedia/fondo-3.png';
-
 import video from '../multimedia/LandingVideo.mp4';
 
 import '../styles/Home.css';
 
 function Home() {
+    const scrollToSection = (section) => {
+        document.querySelector(section).scrollIntoView({ behavior: 'smooth' });
+    };
+
     return(
         <div className="app-landing">
             {/* Primera parte */}
@@ -25,6 +30,9 @@ function Home() {
                 <div className="content1">
                     <h1>Innovando para un mañana más brillante</h1>
                     <p>Descubre la solución a la limpieza automática de recintos</p>
+                </div>
+                <div className="scroll-down-arrow" onClick={() => scrollToSection('.section2')}>
+                    <FaArrowDown />
                 </div>
             </section>
 
@@ -42,6 +50,9 @@ function Home() {
                         <img className='logo-dadumo' src={logo} alt="Logo" />
                     </div>
                 </div>
+                <div className="scroll-down-arrow-2" onClick={() => scrollToSection('.section3')}>
+                    <FaArrowDown />
+                </div>
             </section>
 
             {/* Tercera parte */}
@@ -58,7 +69,7 @@ function Home() {
                 </div>
             </section>
         </div>
-    )
+    );
 }
 
-export default Home
+export default Home;

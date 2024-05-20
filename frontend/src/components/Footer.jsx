@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Footer.css';
+import './Footer.css';
 import logo from '../multimedia/logoDadumo.png'; // Importa la imagen de React
 
 function Footer() {
