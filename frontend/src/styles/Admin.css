@@ -1,90 +1,110 @@
 /* Estilos generales */
 .app-admin {
-    width: 100%;
-  }
-  
-  .main-admin {
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centramos horizontalmente */
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  /* Estilos de la tabla */
-  .main-admin .tabla-admin {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1vh; /* Agregamos un margen arriba de la tabla */
-  }
-  
-  .main-admin th,
-  .main-admin td {
-    border-bottom: 1px solid #ddd;
-    padding: 2vh;
-    text-align: left;
-    font-size: 16pt;
-  }
-  
-  .main-admin th {
-    background-color: #f2f2f2;
-  }
-  
-  /* Estilos de los botones */
-  .main-admin button {
-    padding: 1vh 2vh;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 16pt;
-    margin-right: 1vw; /* Agregamos espacio entre los botones */
-  }
-  
+  width: 100%;
+}
+
+.main-admin {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+/* Estilos del encabezado */
+.header-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%; 
+}
+
+.header-admin h1 {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.btn-cerrar-sesion {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16pt;
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Estilos de la tabla */
+.main-admin .tabla-admin {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1vh;
+}
+
+.main-admin th,
+.main-admin td {
+  border-bottom: 1px solid #ddd;
+  padding: 2vh;
+  text-align: left;
+  font-size: 16pt;
+}
+
+.main-admin th {
+  background-color: #f2f2f2;
+}
+
+/* Estilos de los botones */
+.main-admin button {
+  padding: 1vh 2vh;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16pt;
+  margin-right: 1vw;
+}
+
+.main-admin .btn-container-admin {
+  text-align: right; /* Alineamos los botones a la derecha */
+}
+
+.main-admin .btn-editar-admin,
+.btn-monitoreo-admin {
+  background-color: #0099cc;
+  color: white;
+}
+
+.main-admin .btn-eliminar-admin {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-admin-add {
+  background-color: #0099cc;
+  color: white;
+  align-self: center; 
+  margin-top: 2vh; 
+}
+
+/* Estilos para tablets */
+@media (max-width: 1024px) {
   .main-admin .btn-container-admin {
-    text-align: right; /* Alineamos los botones a la derecha */
+      text-align: center; 
   }
-  
-  .main-admin .btn-editar-admin,
-  .btn-monitoreo-admin {
-    background-color: #0099cc;
-    color: white;
+
+  .main-admin button {
+      display: block;
+      margin-right: 0; 
+      margin-bottom: 1vh; 
   }
-  
-  .main-admin .btn-eliminar-admin {
-    background-color: #dc3545;
-    color: white;
+}
+
+/* Estilos para teléfonos */
+@media (max-width: 767px) {
+  .main-admin button {
+      display: block; 
+      margin-right: 0; 
+      margin-bottom: 1vh; 
   }
-  
-  .btn-admin-add {
-    background-color: #0099cc;
-    color: white;
-    align-self: center; /* Centramos horizontalmente */
-    margin-top: 2vh; /* Agregamos un margen abajo del botón */
-  }
-  
-  /* Estilos para tablets */
-  @media (max-width: 1024px) {
-    .main-admin .btn-container-admin {
-      text-align: center; /* Centramos los botones */
-    }
-  
-    .main-admin button {
-      display: block; /* Hacemos que los botones ocupen toda la anchura */
-      margin-right: 0; /* Quitamos el margen derecho */
-      margin-bottom: 1vh; /* Agregamos espacio entre los botones */
-    }
-  }
-  
-  /* Estilos para teléfonos */
-  @media (max-width: 767px) {
-    .main-admin button {
-      display: block; /* Hacemos que los botones ocupen toda la anchura */
-      margin-right: 0; /* Quitamos el margen derecho */
-      margin-bottom: 1vh; /* Agregamos espacio entre los botones */
-    }
-  }
-  
+}

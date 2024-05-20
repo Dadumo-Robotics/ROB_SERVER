@@ -1,10 +1,31 @@
+/* Flecha de navegación */
+.scroll-down-arrow,.scroll-down-arrow-2 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    z-index: 2;
+}
+
+.scroll-down-arrow-2{
+    color: #000514;
+}
+
+/* Añadir estilos para hover */
+.scroll-down-arrow:hover {
+    color: #ddd;
+}
+
 /* ----------------------- */
 /* --- PRIMERA SECCION --- */
 /* ----------------------- */
 
 .section1 {
     position: relative;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;

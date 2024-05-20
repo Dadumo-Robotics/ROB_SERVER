@@ -4,6 +4,20 @@
   align-items: center;
   width: 100%;
   text-align: center;
+  padding-bottom: 2.3%;
+
+  background-image: url("../multimedia/turtlebot03_fleet.jpg"); /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  height: 100%;
+  background-position: center; /* Centra la imagen en el contenedor */
+}
+
+.app-login::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 78.5vh;
+  background-color: rgba(255, 255, 255, 0.7); /* Capa blanca con opacidad */
 }
 
 .main-login {
@@ -30,7 +44,6 @@
   margin: 5vh 25vh 0vh 12vh;
   /* border: 1px solid #a4a4a4; */
   object-fit: contain;
-  z-index: -1;
 }
 
 .titulo-login{
@@ -46,6 +59,8 @@
   border-radius: 16px;
   align-self: center;
   margin-top: 5vh;
+  background-color: #fff;
+  z-index: 1;
 }
 
 .label-login {
@@ -101,13 +116,21 @@
 
 /* --- VISTA TABLET --- */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .app-login{
+    padding-bottom: 10%;
+  }
+
+  .app-login::before{
+    height: 86.5vh;
+  }
+
   .logo-login {
     width: 30vh; /* Reducir el tamaño del logo */
     margin: 0 6vh 0 0vh; /* Ajustar los márgenes */
   }
 
   .login-container{
-    margin-top: 0vh;
+    margin-top: 10vh;
   }
 
   .inputs-container-login {
@@ -133,6 +156,14 @@
 
 /* --- VISTA TELEFONOS --- */
 @media only screen and (max-width: 600px) {
+  .app-login{
+    padding-bottom: 26%;
+  }
+
+  .app-login::before{
+    height: 78.5vh;
+  }
+
   .logo-login {
     display: none; /* Oculta la imagen en dispositivos móviles */
   }
@@ -140,6 +171,7 @@
   .inputs-container-login {
     width: 100%; /* Ajusta el ancho del contenedor de inputs en dispositivos móviles */
     height: fit-content;
+    margin-top: 15vh;
   }
 
   input {

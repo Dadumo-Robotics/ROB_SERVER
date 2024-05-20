@@ -11,6 +11,14 @@
   background-position: center; /* Centra la imagen en el contenedor */
 }
 
+.app-contacto::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 101vh;
+  background-color: rgba(255, 255, 255, 0.7); /* Capa blanca con opacidad */
+}
+
 .main-contacto {
   display: flex;
   justify-content: center;
@@ -18,20 +26,6 @@
 }
 
 .contacto-container {
-  /* width: 250%; 
-  max-width: 1000px; 
-  margin: 0 auto; 
-  margin-left: -80%; 
-  border: 1px solid #ccc; 
-  border-radius: 8px; 
-  padding: 5%; 
-  position: relative;
-  font-size: 16px; 
-   z-index: 0; 
-  display: flex; 
-  flex-direction: column; 
-  position: relative; */
-
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -39,6 +33,7 @@
   border-radius: 16px;
   background-color: #fff;
   margin: 5% 0;
+  z-index: 1;
 }
 
 .titulo-contacto{
@@ -54,18 +49,6 @@
   color: #000514;
 
 }
-
-/* .contacto-container div {
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start; 
-} */
-
-/* .contacto-container label {
-  text-align: left; 
-  font-size: 16px; 
-  margin-bottom: 10px; 
-} */
 
 .input-style-contacto {
   padding: 10px;
@@ -104,24 +87,7 @@ input::-webkit-inner-spin-button {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-/* .contacto-container input,
-textarea {
-  width: 100%; 
-  padding: 10px; 
-  font-size: 16px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-} */
-
 .btn-enviar {
-  /* background-color: #0099CC; 
-  color: white;
-  border: none; 
-  padding: 12px 24px; 
-  border-radius: 5px;
-  margin-top: 20px;
-  font-size: 16px;  */
-
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
@@ -132,7 +98,6 @@ textarea {
   width: 50%;
   align-self: center;
   margin: 1vh 0 3.5vh 0; /* Arriba,derecha, abajo, izquierda */
-  /* margin-bottom: 4vh; */
   font-size: 1.1rem;
 }
 
@@ -142,12 +107,25 @@ textarea {
     width: 90%; /* Cambia el ancho del contenedor al 90% del ancho de la pantalla */
     margin-top: 2vh;
   }
+
+  .app-contacto::before {
+    height: 86.5vh;
+  }
+
 }
 
 /* Estilos para tablets */
 @media only screen and (min-width: 601px) and (max-width: 1000px) {
   .contacto-container {
     width: 80%; /* Cambia el ancho del contenedor al 80% del ancho de la pantalla */
-    margin-top: 6vh;
+    margin-top: 8vh;
+  }
+
+  .app-contacto{
+    padding-bottom: 4.5vh;
+  }
+
+  .app-contacto::before {
+    height: 86.5vh;
   }
 }

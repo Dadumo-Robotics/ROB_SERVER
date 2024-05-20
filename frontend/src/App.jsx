@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
-// import Component from './component';
-// import Register from './register';
-// import Login from './login';
-
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Header from './components/Header';
+import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoutes';
-import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Movement from './pages/Movement';
@@ -15,51 +13,42 @@ import Contacto from './pages/Contacto';
 import NotFound from './pages/NotFound';
 import User from './pages/User';
 
-function Logout(){
-  localStorage.clear()
-  return <Navigate to="/"/>
+function Logout() {
+  localStorage.clear();
+  return <Navigate to="/" />;
 }
 
-function RegisterAndLogout(){
-  localStorage.clear()
-  return <Register/>
+function RegisterAndLogout() {
+  localStorage.clear();
+  return <Register />;
 }
-
-/*
-function App() {
-  return (
-    <div className="App">
-      <Header /> 
-      <main className='main'>
-        {/* <Component /> *//*}
-        <Register />
-      </main>
-      <Footer />
-    </div>
-  );
-}
-*/
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
+      <main className='main'>
         <Routes>
-          <Route
+          {/* <Route
             path="/user"
             element={
               <ProtectedRoute>
-                  <User />
+                <User />
               </ProtectedRoute>
             }
-          />
-          <Route 
+          /> */}
+          {/* <Route 
             path='/admin' 
             element={
               <ProtectedRoute>
                 <Admin />
               </ProtectedRoute>
             }    
-          />
+          /> */}
+
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/user' element={<User />} />
+
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/register' element={<RegisterAndLogout />} />
@@ -68,9 +57,10 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
+      </main>
+      <Footer />
     </BrowserRouter>
   );
 }
-
 
 export default App;
