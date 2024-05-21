@@ -29,26 +29,23 @@ function App() {
       <Header />
       <main className='main'>
         <Routes>
-          {/* <Route
+          <Route
             path="/user"
             element={
               <ProtectedRoute>
                 <User />
               </ProtectedRoute>
             }
-          /> */}
-          {/* <Route 
+          /> 
+          <Route 
             path='/admin' 
             element={
               <ProtectedRoute>
                 <Admin />
               </ProtectedRoute>
             }    
-          /> */}
-
-          <Route path='/admin' element={<Admin />} />
-          <Route path='/user' element={<User />} />
-
+          /> 
+          
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/register' element={<RegisterAndLogout />} />
