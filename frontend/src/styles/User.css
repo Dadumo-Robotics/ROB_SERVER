@@ -8,12 +8,17 @@
   margin: 0 auto;
 }
 
+h1 {
+  text-align: center;
+}
+
 /* Estilos del encabezado */
 .header-user {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  width: 100%; /* Asegura que el encabezado ocupe todo el ancho del contenedor */
 }
 
 .header-user h1 {
@@ -39,7 +44,7 @@
 }
 
 .main-user th, .main-user td {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   padding: 2vh;
   text-align: left;
   font-size: 16pt;
@@ -56,11 +61,11 @@
   cursor: pointer;
   border-radius: 8px;
   font-size: 16pt;
-  margin-right: 1vw; 
+  margin-right: 1vw; /* Agregamos espacio entre los botones */
 }
 
 .main-user .btn-container-user {
-  text-align: right; 
+  text-align: right; /* Alineamos los botones a la derecha */
 }
 
 .main-user .btn-editar-user, .btn-monitoreo-user {
@@ -73,24 +78,100 @@
   color: white;
 }
 
-/* Estilos para tablets */
 @media (max-width: 1024px) {
   .main-user .btn-container-user {
-      text-align: center;
+      text-align: center; /* Centramos los botones */
   }
 
   .main-user button {
-      display: block; 
-      margin-right: 0; 
-      margin-bottom: 1vh;
+      display: block; /* Hacemos que los botones ocupen toda la anchura */
+      margin-right: 0; /* Quitamos el margen derecho */
+      margin-bottom: 1vh; /* Agregamos espacio entre los botones */
   }
 }
 
-/* Estilos para teléfonos */
 @media (max-width: 767px) {
   .main-user button {
-      display: block;
-      margin-right: 0; 
-      margin-bottom: 1vh;
+      display: block; /* Hacemos que los botones ocupen toda la anchura */
+      margin-right: 0; /* Quitamos el margen derecho */
+      margin-bottom: 1vh; /* Agregamos espacio entre los botones */
   }
+}
+
+/* Estilos del modal */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo negro transparente */
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 12px; /* Esquinas redondeadas */
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  text-align: center;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content form label {
+  margin-bottom: 1rem;
+}
+
+.modal-content form label input,
+.modal-content form label select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 2px solid #a4a4a4;
+  border-radius: 8px;
+  height: 5vh;
+}
+
+.modal-content form label input:focus,
+.modal-content form label select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.modal-content form button {
+  padding: 0.5rem;
+  background-color: #0099cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16pt;
+  margin-top: 1rem;
 }
