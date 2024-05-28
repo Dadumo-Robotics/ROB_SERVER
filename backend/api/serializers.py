@@ -1,9 +1,15 @@
 # api/serializers.py
-from rest_framework import serializers
-from .models import *
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework.response import Response
+from rest_framework import status
+from django.utils import timezone
 
-class RobotSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Robot
-        fields = ["id", "name", "state", "owner"]
-        #extra_kwargs = {"state": {"read_only": True}}
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        data = super().validate(attrs)
+
+        # Custom code to update last_login
+        self.user.last_login = timezone.now()
+        self.user.save()
+
+        return data

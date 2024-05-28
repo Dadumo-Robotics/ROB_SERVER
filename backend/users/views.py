@@ -15,10 +15,5 @@ class CreateUserView(generics.CreateAPIView):
     permission_classes = [AllowAny]
 
 class DeleteUserView(generics.DestroyAPIView):
-    serializer_class = EmailSerializer
+    queryset = CustomUser.objects.all()
     permission_classes = [AllowAny]
-
-    
-    def get_queryset(self):
-        email = self.request
-        return CustomUser.objects.filter(email=email)
