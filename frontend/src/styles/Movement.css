@@ -1,178 +1,149 @@
-/*body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}*/
-
-/*.movement-container {
-    height: 80%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}*/
-
-#camera {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: #000;
+.app-movement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-height: 80%;
+  text-align: center;
+  padding-bottom: 2.3%;
+  background-image: url("../multimedia/turtlebot03_fleet.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-#camera img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
+.app-movement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 0;
 }
 
-#controls {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+.main-movement {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 0px;
 }
 
-/*button {
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #FFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}*/
-#controls button {
-    display: block;
-    margin-bottom: 15px; /* Espacio entre botones */
-    padding: 15px 30px; /* Aumentar el padding para hacer el botón más grande */
-    border: none;
-    border-radius: 8px; /* Bordes ligeramente más redondeados */
-    cursor: pointer;
-    font-size: 1.3em; /* Aumentar el tamaño de la fuente para mejorar la legibilidad */
-    font-weight: bold; /* Opcional: Hacer el texto más prominente */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Opcional: Añadir una sombra ligera para efecto 3D */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves al interactuar */
-
-    width: 25vh; /* Usa un porcentaje del contenedor padre para el ancho */
-    text-align: center; /* Centra el texto dentro del botón */
-    min-width: 180px; /* Un mínimo para asegurar la usabilidad en pantallas pequeñas */
-    max-width: 300px; /* Un máximo para no sobredimensionar en pantallas grandes */
-    height: 8vh;          /* Altura basada en el alto del viewport */
+.left-panel, .right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 13%;
 }
 
-#back-button {
-    background-color: #0099CC; /* Color de fondo más claro */
+.center-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  background-color: #999999;
+  padding: 20px;
 }
 
-#other-button {
-    background-color: #FF6600; /* Color de fondo más oscuro */
+.mapa-image img {
+  width: 160px;
 }
 
-button:hover, button:focus {
-    background-color: #e6e6e6; /* Cambio de color al pasar el ratón o enfocar */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra más prominente al pasar el ratón o enfocar */
+.control-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-button:active {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Efecto de presión al hacer clic */
+.arrow-button, .arrow {
+  border: transparent;
+  background-color: transparent;
 }
 
-#map-container {
-    position: absolute;
-    top: 5vh; /* 5% del alto del viewport */
-    right: 5vw; /* 5% del ancho del viewport */
-    width: 30vw; /* 30% del ancho del viewport */
-    max-width: 300px; /* Máximo ancho fijo */
-    display: flex;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+/* --------------------- */
+/* BOTONES DE MOVIMIENTO */
+/* --------------------- */
+
+/* ESTILO TODOS */
+.arriba,.abajo,.izquierda,.derecha{
+  width: 5rem;
 }
 
-#map {
-    width: 100%;
-    height: 100%;
-    background-color: #FFF;
-    padding: 0px;
-    border-radius: 5px;
+/* MARGEN */
+.abajo,.derecha{
+  margin-top: 5vh;
 }
 
-#map img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen del mapa cubra todo el espacio sin deformarse */
+.arriba,.izquierda{
+  margin-top: 25vh;
 }
 
-#coordinates {
-    width: 100%;
-    padding: 0px;
-    text-align: center; /* Centra el texto horizontalmente */
-    background-color: #FFF; /* Fondo blanco para que coincida con el mapa */
-    border-radius: 0 0 5px 5px; /* Bordes redondeados solo en la parte inferior */
-    font-size: 0.9em; /* Ajusta el tamaño de la fuente si es necesario */
-    color: #333; /* Color del texto oscuro para mejor legibilidad */
+/* ROTACION */
+.arriba {
+  rotate: 180deg;
 }
 
-/*#arrows {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
+.izquierda {
+  rotate: 90deg;
 }
 
-.arrow-box {
-    display: flex;
-    flex-direction: column;
+.derecha {
+  rotate: 270deg;
 }
 
-#horizontal-arrows {
-    margin-right: 40px; /* Añadido margen derecho */
-/*}
-
-.arrow {
-    margin: 5px;
-    background-color: #FFF;
-    padding: 15px 25px;
-    font-size: 16px;
-    border-radius: 5px;
-}*/
-
-#arrows {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.object-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.arrow-box {
-    display: flex;
-    flex-direction: column; /* Esto es para las flechas verticales */
+.object-column, .mapa-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#horizontal-arrows {
-    flex-direction: row; /* Esto cambia la disposición de las flechas horizontales para estar lado a lado */
-    margin-right: 20vh; /* Añadido margen derecho */
-    align-items: center;
-    width: fit-content;
-    white-space: nowrap;
+.object-image {
+  width: 100px;
+  margin-bottom: 10px;
 }
 
-.arrow {
-    margin: 5px;
-    background-color: #FFF;
-    padding: 15px 25px; /* Aumentamos el padding para hacer el botón más grande */
-    font-size: 10vh; /* Aumentamos el tamaño de la fuente */
-    border-radius: 5px;
-    width: 15vh; /* Añadimos un ancho fijo para hacerlos más grandes y uniformes */
-    height: 15vh; /* Añadimos una altura fija */
-    display: flex;
-    align-items: center; /* Centramos el contenido del botón verticalmente */
-    justify-content: center; /* Centramos el contenido del botón horizontalmente */
+.object-details p {
+  margin: 5px 0;
 }
 
-#vertical-arrows .arrow:first-child {
-    margin-bottom: 50%;  /* Aumenta el margen inferior del botón superior */
+.camera-view {
+  width: 100%;
 }
 
-#horizontal-arrows .arrow:first-child {
-    margin-right: 50%;  /* Aumenta el margen inferior del botón superior */
+.camera-view img {
+  width: 100%;
+  height: 64%;
+  border: 1px solid #000;
+}
+
+.btn-trayecto,.btn-volver {
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 1.5vh 1vh;
+  border: none;
+  width: 80%;
+  align-self: center;
+  font-size: 1.1rem;
+  margin-top: 4vh;
+}
+
+.btn-trayecto {
+  background-color: #0099cc;
+}
+
+.btn-volver {
+  background-color: red;
 }

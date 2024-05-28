@@ -3,8 +3,9 @@ import '../styles/Movement.css';
 import '../App.css';
 import camara_foto from '../multimedia/FotosMovimiento/camara_casera.png';
 import mapa_foto from '../multimedia/FotosMovimiento/mapa.png';
+import flecha from '../multimedia/flecha.png';
+import cola from '../multimedia/lata-cola.png';
 import { useNavigate } from "react-router-dom";
-//import movement from '../movement';
 
 function Movement() {
 
@@ -205,33 +206,53 @@ function Movement() {
   //connect();
 
   return (
-
     <div className="app-movement">
       <main className='main-movement'>
-        <div className='movement-container'>
-          <div id="camera">
-            <img src={camara_foto} alt="Vista de la cámara" />
-            <div id="controls">
-              <button ref={backButtonRef} id="back-button" onClick={handleSubmit}>Volver</button>
-              <button ref={otherButtonRef} id="other-button">Trayecto</button>
-            </div>
-            <div id="map-container">
-              <div id="map" ref={mapRef}>
-                <img src={mapa_foto} alt="Minimapa" />
+
+        <div className="left-panel">
+          <button ref={otherButtonRef} className='btn-trayecto'>Trayecto</button>
+          <div className="control-buttons">
+            <button ref={upButtonRef} className="arrow" id="btn_move_up">
+             <img src={flecha} alt="Flecha arriba" className="arriba" />
+            </button>
+            <button ref={downButtonRef} className="arrow" id="btn_move_down">
+              <img src={flecha} alt="Flecha arriba" className="abajo" />
+            </button>
+          </div>
+        </div>
+
+        <div className="center-panel">
+          <div className="object-info">
+            <div className="object-column">
+              <img src={cola} alt="Lata" className="object-image" />
+              <div className="object-details">
+                <p>Objeto: Lata</p>
+                <div id="coordinates" ref={coordinatesRef}>Coordenadas: X, Y</div>
               </div>
-              <div id="coordinates" ref={coordinatesRef}>Coordenadas: X, Y</div>
             </div>
-            <div id="arrows">
-              <div className="arrow-box" id="vertical-arrows">
-                <button ref={upButtonRef} className="arrow" id="btn_move_up">↑</button>
-                <button ref={downButtonRef} className="arrow" id="btn_move_down">↓</button>
-              </div>
-              <div className="arrow-box" id="horizontal-arrows">
-                <button ref={leftButtonRef} className="arrow" id="btn_move_left">←</button>
-                <button ref={rightButtonRef} className="arrow" id="btn_move_right">→</button>
+            <div className="mapa-column">
+              <div className="mapa-image">
+                <img src={mapa_foto} alt="mapa" />
               </div>
             </div>
           </div>
+          <div className="camera-view">
+            <img src={camara_foto} alt="Camera View" />
+          </div>
+        </div>
+
+
+        <div className="right-panel">
+          <button ref={backButtonRef} className='btn-volver' onClick={handleSubmit}>Volver</button>
+
+            <div className="control-buttons">
+              <button ref={leftButtonRef} className="arrow" id="btn_move_left">
+                <img src={flecha} alt="Flecha arriba" className="izquierda" />
+              </button>
+              <button ref={rightButtonRef} className="arrow" id="btn_move_right">
+                <img src={flecha} alt="Flecha arriba" className="derecha" />  
+              </button>
+            </div>
         </div>
       </main>
     </div>
