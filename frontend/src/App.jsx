@@ -32,25 +32,25 @@ function App() {
           <Route
             path="/user"
             element={
-              // <ProtectedRoute>
+              <ProtectedRoute>
                 <User />
-              // </ProtectedRoute>
+              </ProtectedRoute>
             }
           /> 
           <Route 
             path='/admin' 
             element={
-              // <ProtectedRoute>
+              <ProtectedRoute>
                 <Admin />
-              // {/* </ProtectedRoute> */}
+              </ProtectedRoute> 
             }    
           />
            <Route 
             path='/movement' 
             element={
-              // <ProtectedRoute>
+              <ProtectedRoute>
                 <Movement />
-              // </ProtectedRoute>
+              </ProtectedRoute>
             }    
           />
           <Route path='/login' element={<Login />} />
