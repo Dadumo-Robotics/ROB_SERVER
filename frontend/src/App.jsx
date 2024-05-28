@@ -44,12 +44,18 @@ function App() {
                 <Admin />
               </ProtectedRoute>
             }    
-          /> 
-          
+          />
+           <Route 
+            path='/movement' 
+            element={
+              <ProtectedRoute>
+                <Movement />
+              </ProtectedRoute>
+            }    
+          />
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/register' element={<RegisterAndLogout />} />
-          <Route path='/movement' element={<Movement />} />
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/' element={<Home />} />
           <Route path='*' element={<NotFound />} />

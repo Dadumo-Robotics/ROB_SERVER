@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api',#
+    'users',#
     'rest_framework',#
     'corsheaders'#
 ]
@@ -151,3 +152,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True #Cambiar para más seguridad más adelante
 CORS_ALLOWS_CREDENTIALS = True
+
+AUTH_USER_MODEL = 'users.CustomUser'  # MODIFICATION FOR THE AUTH USES OF DJANGO

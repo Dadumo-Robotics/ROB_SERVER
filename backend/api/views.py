@@ -7,32 +7,6 @@ from django.http import JsonResponse
 from django.core.mail import send_mail
 from .models import *
 
-# Create your views here.
-
-#################################################
-#                  USER VIEWS                   #
-#################################################
-
-class CreateUserView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = [AllowAny]
-
-class DeleteUserView(generics.DestroyAPIView):
-    serializer_class = EmailSerializer
-    permission_classes = [AllowAny]
-
-    
-    def get_queryset(self):
-        email = self.request
-        return User.objects.filter(email=email)
-    
-
-
-#################################################
-#                 ROBOT VIEWS                   #
-#################################################
-
 class RobotListCreate(generics.ListCreateAPIView):
     serializer_class = RobotSerializer
     permission_classes = [IsAuthenticated]
