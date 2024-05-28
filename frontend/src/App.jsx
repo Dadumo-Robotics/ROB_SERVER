@@ -48,9 +48,9 @@ function App() {
            <Route 
             path='/movement' 
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Movement />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }    
           />
           <Route path='/login' element={<Login />} />

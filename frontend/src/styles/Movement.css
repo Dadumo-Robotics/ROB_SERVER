@@ -1,11 +1,12 @@
+/* ------------ */
+/* FONDO Y TODO */
+/* ------------ */
 .app-movement {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-height: 80%;
   text-align: center;
-  padding-bottom: 2.3%;
   background-image: url("../multimedia/turtlebot03_fleet.jpg");
   background-size: cover;
   background-position: center;
@@ -30,14 +31,16 @@
   width: 100%;
   z-index: 1;
   box-sizing: border-box;
-  padding: 0px;
 }
 
+/* ------- */
+/* PANELES */
+/* ------- */
 .left-panel, .right-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 13%;
+  width: 20%;
 }
 
 .center-panel {
@@ -46,12 +49,21 @@
   align-items: center;
   width: 75%;
   background-color: #999999;
-  padding: 20px;
 }
 
-.mapa-image img {
-  width: 160px;
+/* -------- */
+/* MINIMAPA */
+/* -------- */
+
+.mapa-image {
+  width: 20vw;
+  margin: 30px 0;
 }
+
+
+/* --------------------- */
+/* BOTONES DE MOVIMIENTO */
+/* --------------------- */
 
 .control-buttons {
   display: flex;
@@ -59,30 +71,27 @@
   align-items: center;
 }
 
+/* ESTILO TODOS */
 .arrow-button, .arrow {
   border: transparent;
   background-color: transparent;
 }
 
-/* --------------------- */
-/* BOTONES DE MOVIMIENTO */
-/* --------------------- */
-
 /* ESTILO TODOS */
-.arriba,.abajo,.izquierda,.derecha{
+.arriba, .abajo, .izquierda, .derecha {
   width: 5rem;
 }
 
-/* MARGEN */
-.abajo,.derecha{
+/* MARGEN BOTONES */
+.abajo, .derecha {
   margin-top: 5vh;
 }
 
-.arriba,.izquierda{
+.arriba, .izquierda {
   margin-top: 25vh;
 }
 
-/* ROTACION */
+/* ROTACION BOTONES */
 .arriba {
   rotate: 180deg;
 }
@@ -108,26 +117,48 @@
   align-items: center;
 }
 
+/* ---------------- */
+/* OBJETO DETECTADO */
+/* ---------------- */
+
+/* Imagen del objeto */
 .object-image {
-  width: 100px;
-  margin-bottom: 10px;
+  width: 200px;
+  margin: 20px;
 }
 
-.object-details p {
-  margin: 5px 0;
+/* Texto del objeto */
+.object-details {
+  margin: 70px 0;
+  width: 300px;
+  height: 125px;
+  font-size: xx-large;
+  border: 1px solid #000514;
+  background-color: #ffffff;
+  align-content: center;
 }
+
+/* ---------------- */
+/* CAMARA DEL ROBOT */
+/* ---------------- */
 
 .camera-view {
-  width: 100%;
+  border: 1px solid #000514;
+  background-image: url("../multimedia/FotosMovimiento/camara_casera.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  height: 330px;
+  width: 95%;
+  margin-top: -5vh;
+  margin-bottom: 4vh;
 }
 
-.camera-view img {
-  width: 100%;
-  height: 64%;
-  border: 1px solid #000;
-}
-
-.btn-trayecto,.btn-volver {
+/* ------- */
+/* BOTONES */
+/* ------- */
+.btn-trayecto, .btn-volver {
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
@@ -137,7 +168,7 @@
   width: 80%;
   align-self: center;
   font-size: 1.1rem;
-  margin-top: 4vh;
+  margin-top: 5vh;
 }
 
 .btn-trayecto {
@@ -146,4 +177,84 @@
 
 .btn-volver {
   background-color: red;
+}
+
+/* Estilos para tabletas con resolución máxima de 850px */
+@media (max-width: 850px) {
+  .app-movement {
+    padding: 10px;
+  }
+
+  .main-movement {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .left-panel, .right-panel {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .center-panel {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .control-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+
+  .control-buttons .arrow {
+    width: 3rem;
+    margin: 10px;
+  }
+
+  .object-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .object-image {
+    width: 120px;
+    margin: 10px;
+  }
+
+  .object-details {
+    margin: 10px 0;
+    width: 60%;
+    height: auto;
+    font-size: xx-large;
+  }
+
+  .mapa-image {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .camera-view {
+    margin-top: 10px;
+    height: 400px;
+    width: 100%;
+  }
+
+  .btn-trayecto, .btn-volver {
+    width: 80%;
+    padding: 1vh;
+    margin: 20px 0;
+  }
 }
