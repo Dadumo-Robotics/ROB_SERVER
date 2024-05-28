@@ -23,7 +23,6 @@ function Movement() {
 
   console.log("entro en la pagina")
 
-  // Crear refs para cada elemento del DOM que necesita manejo de eventos o acceso
   const backButtonRef = useRef(null);
   const upButtonRef = useRef(null);
   const downButtonRef = useRef(null);
@@ -32,22 +31,19 @@ function Movement() {
   const mapRef = useRef(null);
   const otherButtonRef = useRef(null);
   const coordinatesRef = useRef(null);
+  const mapaRef = useRef(null);
 
   useEffect(() => {
-    // Crear un elemento script
     const script = document.createElement('script');
     script.src = "https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js";
     script.async = true;
 
-    // Añadir el script al cuerpo del documento
     document.body.appendChild(script);
 
     script.onload = () => {
-      // El script está cargado completamente, ahora es seguro usar ROSLIB
-      connect(); // Mueve la llamada a connect aquí
+      connect();
     };
 
-    // Añadir manejadores de eventos a los elementos necesarios
     const backButton = backButtonRef.current;
     const upButton = upButtonRef.current;
     const downButton = downButtonRef.current;
@@ -56,6 +52,7 @@ function Movement() {
     const map = mapRef.current;
     const otherButton = otherButtonRef.current;
     const coordinates = coordinatesRef.current;
+    const mapa = mapaRef.current;
 
     if (backButton) backButton.addEventListener("click", disconnect);
     if (upButton) upButton.addEventListener("click", () => call_delante_service("delante"));
@@ -65,7 +62,6 @@ function Movement() {
     if (map) map.addEventListener("click", () => call_delante_service("parar"));
     if (otherButton) otherButton.addEventListener("click", trayecto);
 
-    // Función para limpiar los eventos al desmontar el componente
     return () => {
       if (backButton) backButton.removeEventListener("click", disconnect);
       if (upButton) upButton.removeEventListener("click", () => call_delante_service("delante"));
@@ -79,17 +75,13 @@ function Movement() {
   }, []);
 
   let data = {
-    // ros connection
     ros: null,
     rosbridge_address: 'ws://192.168.0.101:9090/',
-    //rosbridge_address: '',
     connected: false,
-    // service information 
     service_busy: false,
     service_response: ''
   }
 
-  // Conexion base
   function connect() {
     if (data.ros) {
       console.log("Ya existe una conexión. Desconecte antes de reconectar.");
@@ -102,9 +94,9 @@ function Movement() {
       url: data.rosbridge_address
     })
 
-    // Define callbacks
     data.ros.on("connection", () => {
       data.connected = true
+      setMapa()
       console.log("Conexion con ROSBridge correcta")
     })
     data.ros.on("error", (error) => {
@@ -130,7 +122,6 @@ function Movement() {
     }
   }
 
-  // Ejercicio publicacion movimiento
   function stop_move() {
     let topic = new ROSLIB.Topic({
       ros: data.ros,
@@ -144,7 +135,6 @@ function Movement() {
     topic.publish(message)
   }
 
-  // Suscripcion
   function show_pos() {
     let topic = new ROSLIB.Topic({
       ros: data.ros,
@@ -158,12 +148,10 @@ function Movement() {
     })
   }
 
-  // Para servicio y mover direcciones
   function call_delante_service(valor) {
     data.service_busy = true
     data.service_response = ''
 
-    //definimos los datos del servicio
     let service = new ROSLIB.Service({
       ros: data.ros,
       name: '/movement',
@@ -183,7 +171,6 @@ function Movement() {
     })
   }
 
-  // Waypoints
   function trayecto() {
     var startWaypointsService = new ROSLIB.Service({
       ros: data.ros,
@@ -203,7 +190,105 @@ function Movement() {
     });
   }
 
-  //connect();
+  // Camara
+  function setMapa(){
+    //Subscribe to the map topic
+    var mapTopic = new ROSLIB.Topic({
+        ros: data.ros,
+        name: '/map',
+        messageType: 'nav_msgs/msg/OccupancyGrid'
+    });
+
+    mapTopic.subscribe((message) => {
+        draw_occupancy_grid(mapa, message)
+    });
+  }
+
+  function draw_occupancy_grid(canvas, map_data, robotPosition) {
+
+    var ctx = canvas.getContext("2d");
+    //document.querySelector('canvas'); //canvas.getContext("2d");
+
+    var map = map_data;
+    var pointSize = 1;
+
+    canvas.width = map.info.width;
+    canvas.height = map.info.height;
+
+    for (let i = 0; i < map.info.height; i++) {
+        for (let j = 0; j < map.info.width; j++) {
+
+            let posX = j;
+            let posY = i;
+            let pos = map.info.width * i + j;
+
+            let gridValue = map.data[pos];
+
+            var color = evaluarGradiente(gridValue);
+
+            ctx.beginPath();
+            ctx.fillRect(posX, posY, pointSize, pointSize);
+            ctx.fillStyle = color;
+            ctx.stroke();
+        }
+    }
+
+    if(robotPosition) {
+        let robotSize = {
+            width:4,
+            height:4,
+        }
+        let posX = robotPosition.x + canvas.width/2 - robotSize.width/2;
+        let posY = robotPosition.y + canvas.height/2 - robotSize.height/2;
+
+        // console.log(posX, posY)
+
+        // ctx.beginPath();
+        // ctx.fillStyle = 'green';
+        // ctx.fillRect(posX, posY, robotSize.width, robotSize.height);
+        // ctx.stroke();
+
+        ctx.beginPath();
+        ctx.fillStyle = 'green';
+        ctx.arc(posX, posY, robotSize.width/2, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+
+}
+
+function evaluarGradiente(valor) {
+
+    if (valor == 100) return "rgb(0,0,0)"
+    else if (valor == 0) return "rgb(255,255,255)"
+    else if (valor < 0) return "rgb(120,120,120)"
+
+    // Define la escala de colores
+    var colores = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [255, 0, 255],
+        [250, 0, 0],
+        [0, 255, 255],
+    ];
+
+    // Convierte el valor en una posiciÃ³n en la escala
+    var posicion = valor / 100 * (colores.length - 1);
+    var posicionEntera = Math.floor(posicion);
+    var posicionDecimal = posicion - posicionEntera;
+
+    // Interpola entre los colores en las posiciones correspondientes
+    var color1 = colores[posicionEntera];
+    var color2 = colores[posicionEntera + 1];
+
+    if (typeof color1 !== 'undefined' && typeof color2 !== 'undefined' && color1.length > 0 && color2.length > 0) {
+        var r = color1[0] * (1 - posicionDecimal) + color2[0] * posicionDecimal;
+        var g = color1[1] * (1 - posicionDecimal) + color2[1] * posicionDecimal;
+        var b = color1[2] * (1 - posicionDecimal) + color2[2] * posicionDecimal;
+    }
+
+    // Devuelve el color en formato RGB
+    return "rgb(" + Math.round(r) + ", " + Math.round(g) + ", " + Math.round(b) + ")";
+}
 
   return (
     <div className="app-movement">
@@ -225,22 +310,20 @@ function Movement() {
           <div className="object-info">
             <div className="object-column">
               <img src={cola} alt="Lata" className="object-image" />
-              <div className="object-details">
+            </div>
+            <div className="object-details">
                 <p>Objeto: Lata</p>
                 <div id="coordinates" ref={coordinatesRef}>Coordenadas: X, Y</div>
               </div>
-            </div>
             <div className="mapa-column">
               <div className="mapa-image">
-                <img src={mapa_foto} alt="mapa" />
+                <canvas id="mapa" ref={mapaRef}></canvas>
               </div>
             </div>
           </div>
           <div className="camera-view">
-            <img src={camara_foto} alt="Camera View" />
           </div>
         </div>
-
 
         <div className="right-panel">
           <button ref={backButtonRef} className='btn-volver' onClick={handleSubmit}>Volver</button>
