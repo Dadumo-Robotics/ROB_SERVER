@@ -20,8 +20,7 @@ function Login() {
   const handleSubmit = async (e) => {
       e.preventDefault();
         try {
-          const user = email
-          const res = await api.post(route, { "username": user, "password":password })
+          const res = await api.post(route, { "email": email, "password":password })
           console.log(res.data.access)
           console.log(res.data.refresh)
           localStorage.setItem(ACCESS_TOKEN, res.data.access);
