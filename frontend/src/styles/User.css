@@ -39,8 +39,9 @@ h1 {
 
 /* Estilos de la tabla */
 .main-user .tabla-user {
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
+  margin: 2% auto;
 }
 
 .main-user th, .main-user td {
