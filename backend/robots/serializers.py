@@ -7,3 +7,9 @@ class RobotSerializer(serializers.ModelSerializer):
         model = Robot
         fields = ["id", "name", "state", "owner", "device_ip"]
         #extra_kwargs = {"state": {"read_only": True}}
+
+class RobotFullSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Robot
+        fields = "__all__"
+        #extra_kwargs = {"state": {"read_only": True}}
