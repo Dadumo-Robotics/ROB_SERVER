@@ -39,6 +39,21 @@ function User() {
         }));
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+          try {
+            const user = email
+            const res = await api.post(route, { "username": user, "password":password })
+            console.log(res.data.access)
+            console.log(res.data.refresh)
+            localStorage.setItem(ACCESS_TOKEN, res.data.access);
+            localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
+            navigate("/user")
+          } catch (error) {
+              alert(error)
+          }
+     }; 
+
     return (
         <div className="app-user">
             <main className='main-user'>
@@ -90,7 +105,7 @@ function User() {
                                     <option value="Inactivo">Inactivo</option>
                                 </select>
                             </label>
-                            <button type="button" onClick={handleSave}>Guardar</button>
+                            <button type="submit" onClick={handleSave}>Guardar</button>
                         </form>
                     </div>
                 </div>

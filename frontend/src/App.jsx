@@ -42,7 +42,7 @@ function App() {
             element={
               <ProtectedRoute>
                 <Admin />
-              </ProtectedRoute>
+              </ProtectedRoute> 
             }    
           />
            <Route 

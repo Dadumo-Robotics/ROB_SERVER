@@ -1,178 +1,260 @@
-/*body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}*/
-
-/*.movement-container {
-    height: 80%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}*/
-
-#camera {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: #000;
+/* ------------ */
+/* FONDO Y TODO */
+/* ------------ */
+.app-movement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  background-image: url("../multimedia/turtlebot03_fleet.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-#camera img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
+.app-movement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 0;
 }
 
-#controls {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+.main-movement {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
 }
 
-/*button {
-    display: block;
-    margin-bottom: 10px;
+/* ------- */
+/* PANELES */
+/* ------- */
+.left-panel, .right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+
+.center-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  background-color: #999999;
+}
+
+/* -------- */
+/* MINIMAPA */
+/* -------- */
+
+.mapa-image {
+  width: 20vw;
+  margin: 30px 0;
+}
+
+
+/* --------------------- */
+/* BOTONES DE MOVIMIENTO */
+/* --------------------- */
+
+.control-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ESTILO TODOS */
+.arrow-button, .arrow {
+  border: transparent;
+  background-color: transparent;
+}
+
+/* ESTILO TODOS */
+.arriba, .abajo, .izquierda, .derecha {
+  width: 5rem;
+}
+
+/* MARGEN BOTONES */
+.abajo, .derecha {
+  margin-top: 5vh;
+}
+
+.arriba, .izquierda {
+  margin-top: 25vh;
+}
+
+/* ROTACION BOTONES */
+.arriba {
+  rotate: 180deg;
+}
+
+.izquierda {
+  rotate: 90deg;
+}
+
+.derecha {
+  rotate: 270deg;
+}
+
+.object-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.object-column, .mapa-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------------- */
+/* OBJETO DETECTADO */
+/* ---------------- */
+
+/* Imagen del objeto */
+.object-image {
+  width: 200px;
+  margin: 20px;
+}
+
+/* Texto del objeto */
+.object-details {
+  margin: 70px 0;
+  width: 300px;
+  height: 125px;
+  font-size: xx-large;
+  border: 1px solid #000514;
+  background-color: #ffffff;
+  align-content: center;
+}
+
+/* ---------------- */
+/* CAMARA DEL ROBOT */
+/* ---------------- */
+
+.camera-view {
+  border: 1px solid #000514;
+  background-image: url("../multimedia/FotosMovimiento/camara_casera.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  height: 330px;
+  width: 95%;
+  margin-top: -5vh;
+  margin-bottom: 4vh;
+}
+
+/* ------- */
+/* BOTONES */
+/* ------- */
+.btn-trayecto, .btn-volver {
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 1.5vh 1vh;
+  border: none;
+  width: 80%;
+  align-self: center;
+  font-size: 1.1rem;
+  margin-top: 5vh;
+}
+
+.btn-trayecto {
+  background-color: #0099cc;
+}
+
+.btn-volver {
+  background-color: red;
+}
+
+/* Estilos para tabletas con resolución máxima de 850px */
+@media (max-width: 850px) {
+  .app-movement {
     padding: 10px;
-    background-color: #FFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}*/
-#controls button {
-    display: block;
-    margin-bottom: 15px; /* Espacio entre botones */
-    padding: 15px 30px; /* Aumentar el padding para hacer el botón más grande */
-    border: none;
-    border-radius: 8px; /* Bordes ligeramente más redondeados */
-    cursor: pointer;
-    font-size: 1.3em; /* Aumentar el tamaño de la fuente para mejorar la legibilidad */
-    font-weight: bold; /* Opcional: Hacer el texto más prominente */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Opcional: Añadir una sombra ligera para efecto 3D */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves al interactuar */
+  }
 
-    width: 25vh; /* Usa un porcentaje del contenedor padre para el ancho */
-    text-align: center; /* Centra el texto dentro del botón */
-    min-width: 180px; /* Un mínimo para asegurar la usabilidad en pantallas pequeñas */
-    max-width: 300px; /* Un máximo para no sobredimensionar en pantallas grandes */
-    height: 8vh;          /* Altura basada en el alto del viewport */
-}
-
-#back-button {
-    background-color: #0099CC; /* Color de fondo más claro */
-}
-
-#other-button {
-    background-color: #FF6600; /* Color de fondo más oscuro */
-}
-
-button:hover, button:focus {
-    background-color: #e6e6e6; /* Cambio de color al pasar el ratón o enfocar */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra más prominente al pasar el ratón o enfocar */
-}
-
-button:active {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Efecto de presión al hacer clic */
-}
-
-#map-container {
-    position: absolute;
-    top: 5vh; /* 5% del alto del viewport */
-    right: 5vw; /* 5% del ancho del viewport */
-    width: 30vw; /* 30% del ancho del viewport */
-    max-width: 300px; /* Máximo ancho fijo */
-    display: flex;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-}
-
-#map {
-    width: 100%;
-    height: 100%;
-    background-color: #FFF;
-    padding: 0px;
-    border-radius: 5px;
-}
-
-#map img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen del mapa cubra todo el espacio sin deformarse */
-}
-
-#coordinates {
-    width: 100%;
-    padding: 0px;
-    text-align: center; /* Centra el texto horizontalmente */
-    background-color: #FFF; /* Fondo blanco para que coincida con el mapa */
-    border-radius: 0 0 5px 5px; /* Bordes redondeados solo en la parte inferior */
-    font-size: 0.9em; /* Ajusta el tamaño de la fuente si es necesario */
-    color: #333; /* Color del texto oscuro para mejor legibilidad */
-}
-
-/*#arrows {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
+  .main-movement {
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-}
+    flex-direction: row;
+    width: 100%;
+  }
 
-.arrow-box {
+  .left-panel, .right-panel {
+    width: 20%;
     display: flex;
     flex-direction: column;
-}
-
-#horizontal-arrows {
-    margin-right: 40px; /* Añadido margen derecho */
-/*}
-
-.arrow {
-    margin: 5px;
-    background-color: #FFF;
-    padding: 15px 25px;
-    font-size: 16px;
-    border-radius: 5px;
-}*/
-
-#arrows {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.arrow-box {
-    display: flex;
-    flex-direction: column; /* Esto es para las flechas verticales */
-}
-
-#horizontal-arrows {
-    flex-direction: row; /* Esto cambia la disposición de las flechas horizontales para estar lado a lado */
-    margin-right: 20vh; /* Añadido margen derecho */
+    justify-content: flex-start;
     align-items: center;
-    width: fit-content;
-    white-space: nowrap;
-}
+    margin-bottom: 20px;
+  }
 
-.arrow {
-    margin: 5px;
-    background-color: #FFF;
-    padding: 15px 25px; /* Aumentamos el padding para hacer el botón más grande */
-    font-size: 10vh; /* Aumentamos el tamaño de la fuente */
-    border-radius: 5px;
-    width: 15vh; /* Añadimos un ancho fijo para hacerlos más grandes y uniformes */
-    height: 15vh; /* Añadimos una altura fija */
+  .center-panel {
+    width: 60%;
     display: flex;
-    align-items: center; /* Centramos el contenido del botón verticalmente */
-    justify-content: center; /* Centramos el contenido del botón horizontalmente */
-}
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
 
-#vertical-arrows .arrow:first-child {
-    margin-bottom: 50%;  /* Aumenta el margen inferior del botón superior */
-}
+  .control-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
 
-#horizontal-arrows .arrow:first-child {
-    margin-right: 50%;  /* Aumenta el margen inferior del botón superior */
+  .control-buttons .arrow {
+    width: 3rem;
+    margin: 10px;
+  }
+
+  .object-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .object-image {
+    width: 120px;
+    margin: 10px;
+  }
+
+  .object-details {
+    margin: 10px 0;
+    width: 60%;
+    height: auto;
+    font-size: xx-large;
+  }
+
+  .mapa-image {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .camera-view {
+    margin-top: 10px;
+    height: 400px;
+    width: 100%;
+  }
+
+  .btn-trayecto, .btn-volver {
+    width: 80%;
+    padding: 1vh;
+    margin: 20px 0;
+  }
 }
