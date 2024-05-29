@@ -1,7 +1,7 @@
 # users/serializers.py
 from rest_framework import serializers
 from .models import CustomUser
-
+from django.contrib.auth.password_validation import validate_password
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,9 +18,11 @@ class UserSerializer(serializers.ModelSerializer):
 
         return user
 
-    
 class EmailSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = ["email"]
 
+class ChangePasswordSerializer(serializers.Serializer):
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True, validators=[validate_password])
