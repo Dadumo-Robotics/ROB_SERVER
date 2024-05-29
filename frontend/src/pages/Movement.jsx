@@ -6,6 +6,8 @@ import mapa_foto from '../multimedia/FotosMovimiento/mapa.png';
 import flecha from '../multimedia/flecha.png';
 import cola from '../multimedia/lata-cola.png';
 import { useNavigate } from "react-router-dom";
+import { ROBOT_ID, ROBOT_IP, ROBOT} from "../constants";
+import api from '../api'; // Importa el cliente de API
 
 function Movement() {
 
@@ -22,7 +24,7 @@ function Movement() {
  };
 
   console.log("entro en la pagina")
-
+  
   const backButtonRef = useRef(null);
   const upButtonRef = useRef(null);
   const downButtonRef = useRef(null);
@@ -32,6 +34,28 @@ function Movement() {
   const otherButtonRef = useRef(null);
   const coordinatesRef = useRef(null);
   const mapaRef = useRef(null);
+  let coordinatesForDatabase = "X:0, Y:0";
+  let currentRobot;
+  let currentRobotString;
+  const routeIndividual="/api/robot/"
+
+  const handleCoordinates = async () => {
+    try {
+        /*localStorage.setItem(ROBOT).last_coordinates = coordinatesForDatabase;
+        localStorage.setItem(ROBOT).last_update_time = getCurrentTime();*/
+        currentRobotString = localStorage.getItem(ROBOT)
+        currentRobot = JSON.parse(currentRobotString)
+        console.log(currentRobot);
+        currentRobot.last_coordinates = coordinatesForDatabase;
+        console.log(currentRobot);
+        // Realizar solicitud PUT para actualizar el robot con los nuevos datos
+        await api.put(routeIndividual +"update-coordinates/"+localStorage.getItem(ROBOT_ID), currentRobot);
+
+    } catch (error) {
+        alert('Error al actualizar el robot');
+        console.error(error);
+    }
+  };
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -53,6 +77,7 @@ function Movement() {
     const otherButton = otherButtonRef.current;
     const coordinates = coordinatesRef.current;
     const mapa = mapaRef.current;
+    
 
     if (backButton) backButton.addEventListener("click", disconnect);
     if (upButton) upButton.addEventListener("click", () => call_delante_service("delante"));
@@ -76,11 +101,13 @@ function Movement() {
 
   let data = {
     ros: null,
-    rosbridge_address: 'ws://192.168.0.101:9090/',
+    rosbridge_address: 'ws://'+localStorage.getItem(ROBOT_IP)+':9090/',
     connected: false,
     service_busy: false,
     service_response: ''
   }
+
+  console.log(data.rosbridge_address)
 
   function connect() {
     if (data.ros) {
@@ -145,6 +172,9 @@ function Movement() {
     topic.subscribe((message) => {
       data.position = message.pose.pose.position
       coordinates.innerHTML = "X: " + data.position.x.toFixed(2) + ", Y:" + data.position.y.toFixed(2);
+      //Esto es para que envie las coordenadas a la base de datos también
+      coordinatesForDatabase =  "X: " + data.position.x.toFixed(2) + ", Y:" + data.position.y.toFixed(2);
+      handleCoordinates();
     })
   }
 
@@ -296,6 +326,11 @@ function evaluarGradiente(valor) {
 
         <div className="left-panel">
           <button ref={otherButtonRef} className='btn-trayecto'>Trayecto</button>
+          {/*
+            <button className='btn-trayecto' onClick={handleCoordinates}>Probar</button>
+          */}
+          
+          
           <div className="control-buttons">
             <button ref={upButtonRef} className="arrow" id="btn_move_up">
              <img src={flecha} alt="Flecha arriba" className="arriba" />
