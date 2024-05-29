@@ -24,8 +24,7 @@ function Register() {
   const handleSubmit = async (e) => {
       e.preventDefault();
         try {
-          const user = email
-          const res = await api.post(route, { "username": user, "first_name": name, "last_name":surname, "email":email, "password":password })
+          await api.post(route, { "email": email, "first_name": name, "last_name":surname, "password":password , "role": "user"})
           navigate("/login")
 
       } catch (error) {
