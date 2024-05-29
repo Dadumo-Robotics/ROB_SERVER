@@ -5,5 +5,5 @@ from .models import Robot
 class RobotSerializer(serializers.ModelSerializer):
     class Meta:
         model = Robot
-        fields = ["id", "name", "state", "owner"]
+        fields = ["id", "name", "state", "owner", "device_ip"]
         #extra_kwargs = {"state": {"read_only": True}}
