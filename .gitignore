@@ -3,7 +3,12 @@ server_env/
 frontend/node_modules/
 
 backend/api/__pycache__/
-
 backend/api/migrations/__pycache__/
+
+backend/users/__pycache__/
+backend/users/migrations/__pycache__/
+
+backend/robots/__pycache__/
+backend/robots/migrations/__pycache__/
 
 backend/backend/__pycache__/
