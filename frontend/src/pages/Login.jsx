@@ -25,7 +25,18 @@ function Login() {
           console.log(res.data.refresh)
           localStorage.setItem(ACCESS_TOKEN, res.data.access);
           localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
-          navigate("/user")
+
+          // Obtener el rol del usuario llamando al endpoint user/current-user/
+          const userResponse = await api.get('/api/user/current-user/');
+          const userRole = userResponse.data.role;
+
+          // Redirigir según el rol del usuario
+          if (userRole === 'admin') {
+            navigate("/admin"); // Redirigir a la página de administrador
+          } else {
+            navigate("/user"); // Redirigir a la página de usuario normal
+          }
+          
         } catch (error) {
             alert(error)
         }
