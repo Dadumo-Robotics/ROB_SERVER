@@ -144,10 +144,6 @@
 
 .camera-view {
   border: 1px solid #000514;
-  background-image: url("../multimedia/FotosMovimiento/camara_casera.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: auto;
   height: 330px;
   width: 95%;

@@ -34,6 +34,7 @@ function Movement() {
   const otherButtonRef = useRef(null);
   const coordinatesRef = useRef(null);
   const mapaRef = useRef(null);
+  const camaraRef = useRef(null);
   let coordinatesForDatabase = "X:0, Y:0";
   let currentRobot;
   let currentRobotString;
@@ -76,7 +77,8 @@ function Movement() {
     const map = mapRef.current;
     const otherButton = otherButtonRef.current;
     const coordinates = coordinatesRef.current;
-    const mapa = mapaRef.current;
+    const mapa = mapaRef.current;    
+    const camara = camaraRef.current;
     
 
     if (backButton) backButton.addEventListener("click", disconnect);
@@ -101,7 +103,8 @@ function Movement() {
 
   let data = {
     ros: null,
-    rosbridge_address: 'ws://'+localStorage.getItem(ROBOT_IP)+':9090/',
+    // rosbridge_address: 'ws://'+localStorage.getItem(ROBOT_IP)+':9090/',
+    rosbridge_address: 'ws://192.168.0.101:9090/',
     connected: false,
     service_busy: false,
     service_response: ''
@@ -124,6 +127,7 @@ function Movement() {
     data.ros.on("connection", () => {
       data.connected = true
       setMapa()
+      setCamera()
       console.log("Conexion con ROSBridge correcta")
     })
     data.ros.on("error", (error) => {
@@ -320,6 +324,23 @@ function evaluarGradiente(valor) {
     return "rgb(" + Math.round(r) + ", " + Math.round(g) + ", " + Math.round(b) + ")";
 }
 
+// Camara
+function setCamera(){
+  console.log("Entra camara");
+  var imageListener = new ROSLIB.Topic({
+      ros: data.ros,
+      name: '/camera/image_processed',
+      messageType: 'custom_interface/msg/Base64Image'
+  });
+
+  imageListener.subscribe(function(message) {
+      // Convertir la imagen de ROS a base64
+      var base64Image = 'data:image/jpeg;base64,' + message.data;
+      document.getElementById('mjpeg').src = base64Image;
+  });
+  console.log("Acaba camara");
+}
+
   return (
     <div className="app-movement">
       <main className='main-movement'>
@@ -357,6 +378,7 @@ function evaluarGradiente(valor) {
             </div>
           </div>
           <div className="camera-view">
+            <img id="mjpeg" width= "100%" height="100%"  ref={camaraRef}/>
           </div>
         </div>
 
